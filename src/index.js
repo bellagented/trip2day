@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './Pages/home';
-import LoginPage from './Pages/LoginPage';
 
-import {
-  BrowserRouter as Router,
 
-} from "react-router-dom";
+
 ReactDOM.render(
-  <Router>
-    <LoginPage />
-  </Router>,
+  <>
+    <App />
+  </>,
   document.getElementById('root')
 );
 

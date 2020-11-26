@@ -1,18 +1,57 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import ProfileHeadbar from "./Components/ProfileHeadbar";
 import PreviewPlanner from "./Home component/PreviewPlanner";
 import PreviewFriendRequest from "./Home component/PreviewFriendRequest";
 import PreviewFriend from "./Home component/PreviewFriend";
-let profile={img:'',name:'GIANGIANNI',age:'millemila',from:'acquario di cattolica'};
+
 export default function Home() {
+  const [data, setData] = useState({});
+  const [profile, setProfile] = useState([]);
+  const [friendList, setFriendList] = useState([]);
+  const [planners, setPlanners] = useState([]);
+
+  async function getData(url, setValue) {
+    let request = await fetch(url);
+    let response = await request.json();
+    setValue(response);
+    return response;
+  }
+
+  const createProfile = (allinfo) => {
+    return setProfile({
+      name: allinfo.nickname,
+      age: allinfo.age,
+      from: allinfo.from,
+      img: allinfo.img,
+    });
+  };
+
+  const createPlanners = (planners) => {
+    const plannerArray = planners.map((planner)=>{return{name:planner.where,img:planner.img}})
+ return setPlanners(plannerArray);
+  };
+
+  const createFriendList = (friends) => {
+    const friendArray = friends.map((friend)=>{return{name:friend.nickname,img:friend.img}})
+ return setFriendList(friendArray);
+  };
+
+
+  useEffect(() => {
+    getData("http://localhost:3001/nickname/", setData).then((data) => {
+      createProfile(data);
+      createFriendList(data.friendList);
+      createPlanners(data.planner);
+    });
+  }, []);
+
   return (
     <>
       <ProfileHeadbar profile={profile} />
-      <PreviewPlanner />
-      <PreviewFriendRequest />
-      <PreviewFriend />
+      <PreviewPlanner planners={planners} />
+      {/* <PreviewFriendRequest /> */}
+      <PreviewFriend friendList={friendList} />
     </>
   );
 }
-
-

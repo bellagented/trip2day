@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function PreviewFriendRequest(props) {
   return (
     <div >
-      <Link to="/ ">FRATM</Link>
+      <Link className='sectiontitle' to="/ "><h1 >FRATM</h1></Link>
       <div style={{display:'flex'}}>
       <IconPreview array={props.friendList} />
       </div>

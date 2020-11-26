@@ -1,0 +1,40 @@
+.homecontainer{
+    padding: 20px;
+}
+
+.homeheader{
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    color: #222222;
+    background-color: #9BF2CF;
+    padding:20px 10px 20px 10px;
+}
+
+.preview{
+    width: 20em;
+    height: 20em;
+    border-radius: 5%;
+    margin: 5px;
+    background-size: cover;
+    background-position: center;
+}
+.preview:hover{cursor: pointer;
+border: 2px solid #9BF2CF;}
+.sectiontitle{
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    color: #222222;
+}
+.sectionsubtitle{
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    color: #5B5B5B;
+}
+
+.sectionelementtitle{
+    margin: 10px;
+    padding-left: 10px;
+    font-family: 'Comfortaa', cursive;
+    color:#222222;
+background-color: #9BF2CF;
+opacity: 70%;}

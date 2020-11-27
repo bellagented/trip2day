@@ -1,0 +1,70 @@
+.ProfileHeader {
+  display: flex;
+}
+
+.textsection {
+  padding-left: 50px;
+}
+
+.nameprofile {
+  font-family: "Comfortaa", cursive;
+  text-decoration: none;
+  color: #222222;
+}
+.subtextprofil {
+  font-family: "Comfortaa", cursive;
+  text-decoration: none;
+  color: #5b5b5b;
+}
+
+.profileimg {
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+}
+
+.requestbanner {
+  font-family: "Comfortaa", cursive;
+  color: #222222;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #9bf2cf;
+}
+
+.requestbanner button {
+  font-family: "Comfortaa", cursive;
+  color: #222222;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #2f7055;
+}
+
+.friendarchivecontainer {
+  display: flex;
+}
+.previewarchive {
+  width: 20em;
+  height: 20em;
+  border-radius: 5%;
+  margin: 5px;
+  background-size: cover;
+  background-position: center;
+}
+.previewarchive:hover {
+  cursor: pointer;
+  border: 2px solid #9bf2cf;
+}
+.friendarchivetitle {
+  font-family: "Comfortaa", cursive;
+  color: #222222;
+}
+
+.archivetitle {
+  margin: 10px;
+  padding-left: 10px;
+  font-family: "Comfortaa", cursive;
+  color: #222222;
+  background-color: #9bf2cf;
+  opacity: 70%;
+}

@@ -17,7 +17,7 @@ export default function IconPreview(props) {
     const style={backgroundImage: "url(" + element.img  + ")"};
     const path = props.path + element.name;
     return (
-      <div className='preview' style={style} onClick={()=>GoTo(path)}>
+      <div key={element.name} className='preview' style={style} onClick={()=>GoTo(path)}>
         <h3 className="sectionelementtitle">{element.name}</h3>
       </div>
     );

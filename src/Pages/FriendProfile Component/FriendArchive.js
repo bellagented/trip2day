@@ -35,6 +35,7 @@ export default function RequestBanner(props) {
           const style = { backgroundImage: "url(" + element.img + ")" };
           return (
             <div
+            key={element.name}
               className="previewarchive"
               style={style}
               onClick={() => GoTo("/home")}

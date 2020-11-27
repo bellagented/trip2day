@@ -12,7 +12,7 @@ export default function RequestBanner(props) {
 
   return(<div className='requestbanner'>{request.map((destination) => {
     return (
-      <div >
+      <div key={destination}>
         <p>
           {props.nickname} is looking for suggestions for a new trip to{" "}
           {destination}

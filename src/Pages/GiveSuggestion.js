@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function GiveSuggestion(props) {
- 
+  let { id } = useParams();
   const [category, setCategory] = useState("");
   const [activity, setName] = useState("");
   const [cost, setCost] = useState("");
@@ -33,7 +34,7 @@ export default function GiveSuggestion(props) {
 
   const handleSubmit = (e) => {
     console.log(
-      category + "," + activity + "," + cost + "," + timeNeeded + "," + description + "," + photo
+      category + "," + activity + "," + cost + "," + timeNeeded + "," + description + "," + photo+' to '+id
     );
     e.preventDefault();
   };

@@ -22,7 +22,7 @@ function App() {
 <Switch>
 <Route path='/home'><Home/></Route>
 <Route path='/profile/:friend'><FriendProfile/></Route>
-<Route path='/giveSuggestion'><GiveSuggestion/></Route>
+<Route path='/giveSuggestion/:id'><GiveSuggestion/></Route>
 <Route path='/notification'><Notification/></Route>
 <Route path='/option'><Option/></Route>
 

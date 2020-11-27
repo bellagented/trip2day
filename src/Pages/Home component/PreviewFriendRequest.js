@@ -22,7 +22,7 @@ export default function PreviewFriendRequest(props) {
         <h1>HELP MEEEEE!</h1>
       </Link>
       <div style={{ display: "flex" }}>
-        <IconPreview array={plannerarray} />
+        <IconPreview array={plannerarray} path={'/giveSuggestion'} />
       </div>
     </>
   );

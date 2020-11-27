@@ -22,7 +22,7 @@ export default function ArchivePreview(props) {
         <h1>Your Stories</h1>
       </Link>
       <div style={{ display: "flex" }}>
-        <IconPreview array={plannerarray} />
+        <IconPreview array={plannerarray} path={'/archive/idarchive'}/>
       </div>
     </>
   );

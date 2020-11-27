@@ -11,7 +11,7 @@ export default function PreviewPlanner(props) {
       </Link>
       <p className="sectionsubtitle">Select a plan to open</p>
       <div style={{ display: "flex" }}>
-        <IconPreview array={props.planners} />
+        <IconPreview array={props.planners} path={'/planner/idplanner'}/>
      
       <div
         className="preview"

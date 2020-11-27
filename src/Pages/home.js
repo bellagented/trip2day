@@ -1,11 +1,11 @@
 import React from "react";
 import '../styles/Home.css';
 import { useEffect, useState } from "react";
-import ProfileHeadbar from "./Components/ProfileHeadbar";
 import PreviewPlanner from "./Home component/PreviewPlanner";
 import PreviewFriendRequest from "./Home component/PreviewFriendRequest";
 import PreviewFriend from "./Home component/PreviewFriend";
 import ArchivePreview from "./Home component/ArchivePreview";
+
 
 export default function Home() {
   const [data, setData] = useState({});

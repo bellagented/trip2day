@@ -11,6 +11,7 @@ import Planner from './Pages/Planner';
 import ListArchive from './Pages/ListArchive';
 import Archive from './Pages/Archive';
 import FriendList from './Pages/FriendList';
+import Signup from './Pages/signup';
 import {
   BrowserRouter as Router,
 Switch,Route
@@ -33,6 +34,7 @@ function App() {
 <Route path='/archive'><ListArchive/></Route>
 <Route path='/friendlist'><FriendList/></Route>
 <Route path='/'><LoginPage/></Route>
+<Route path='/signup'><Signup/></Route>
 </Switch>
     </Router>
   );

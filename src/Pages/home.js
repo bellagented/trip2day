@@ -1,13 +1,15 @@
 import React from "react";
+import '../styles/Home.css';
 import { useEffect, useState } from "react";
-import ProfileHeadbar from "./Components/ProfileHeadbar";
 import PreviewPlanner from "./Home component/PreviewPlanner";
 import PreviewFriendRequest from "./Home component/PreviewFriendRequest";
 import PreviewFriend from "./Home component/PreviewFriend";
+import ArchivePreview from "./Home component/ArchivePreview";
+
 
 export default function Home() {
   const [data, setData] = useState({});
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState({});
   const [friendList, setFriendList] = useState([]);
   const [planners, setPlanners] = useState([]);
 
@@ -47,11 +49,13 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <ProfileHeadbar profile={profile} />
+    <div className='homecontainer'>
+    <h1 className='homeheader'>Welcome <span style={{color:'#2F7055'}}>{profile.name}</span></h1>
+      {/* <ProfileHeadbar profile={profile} /> */}
       <PreviewPlanner planners={planners} />
-      {/* <PreviewFriendRequest /> */}
+      <PreviewFriendRequest />
       <PreviewFriend friendList={friendList} />
-    </>
+      <ArchivePreview/>
+    </div>
   );
 }

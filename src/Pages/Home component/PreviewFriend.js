@@ -1,15 +1,16 @@
 import React from "react";
-import IconPreview from "../Components/IconPreview";
+import IconPreviewFriend from "../Components/IconPreviewFriend";
 import { Link } from "react-router-dom";
+
 //banner con preview  degli amici per la sezione home
 
 
-export default function PreviewFriendRequest(props) {
+export default function PreviewFriend(props) {
   return (
     <div >
-      <Link to="/ ">FRATM</Link>
+      <Link className='sectiontitle' to="/ "><h1 >FRATM</h1></Link>
       <div style={{display:'flex'}}>
-      <IconPreview array={props.friendList} />
+      <IconPreviewFriend array={props.friendList} path={'/profile/'} />
       </div>
     </div>
   );

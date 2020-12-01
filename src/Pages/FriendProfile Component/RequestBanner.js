@@ -1,7 +1,7 @@
 import React from "react";
+import {useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const request = [{ to: "Rome", id: "AfthSRTUiuh" }, { to: "Barcelona", id: "mhJYgJKUhkuG" }];
 
 export default function RequestBanner(props) {
   const history = useHistory();
@@ -12,13 +12,16 @@ export default function RequestBanner(props) {
 
   return (
     <div className="requestbanner">
-      {request.map((destination) => {
+    <p>{props.request.length===0? 'no trips planned':''}</p>
+      {props.request.map((destination) => {
         return (
+          
           <div key={destination.id}>
+         
             <p>
-              {props.nickname} is looking for suggestions for a new trip to{" "}
-              {destination.to}
-              <button onClick={() => GoTo("/giveSuggestion/"+destination.id)}>
+              I'm looking for suggestions for a new trip to{" "}
+              {destination.where}
+              <button onClick={() => GoTo("/giveSuggestion/"+destination.id+'/'+props.name+'/'+destination.where)}>
                 Give suggestion{" "}
               </button>
             </p>

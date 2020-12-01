@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProfileHeadbar from "./Components/ProfileHeadbar";
 import RequestBanner from "./FriendProfile Component/RequestBanner";
 import FriendArchive from "./FriendProfile Component/FriendArchive";
@@ -7,15 +7,25 @@ import { useParams } from "react-router-dom";
 
 export default function FriendProfile() {
   let { friend } = useParams();
+  const [profile, setProfile] = useState({ name: "loading}", request: [] });
   const nickname = friend;
-  const text = "non so fare le token di accesso, uccidetemi";
-  const img =
-    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80";
+  async function getData(url, setValue) {
+    let request = await fetch(url);
+    let response = await request.json();
+    setValue(response);
+    console.log(response);
+    return response;
+  }
+  useEffect(() => {
+    getData("http://localhost:3001/friendprofile/" + nickname, setProfile);
+  }, []);
 
   return (
     <div>
-      <ProfileHeadbar profile={{ name: nickname, text: text, img: img }} />
-      <RequestBanner nickname={nickname} />
+      <ProfileHeadbar
+        profile={{ name: nickname, text: profile.text, img: profile.img }}
+      />
+      <RequestBanner request={profile.request} name={nickname} />
       <FriendArchive />
     </div>
   );

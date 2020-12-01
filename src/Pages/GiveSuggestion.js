@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/GiveSuggestion.css";
+import { useHistory } from "react-router-dom";
 
 export default function GiveSuggestion(props) {
   let { id } = useParams();
@@ -11,6 +12,7 @@ export default function GiveSuggestion(props) {
   const [timeNeeded, setTimeNeeded] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
+  const history = useHistory();
 
   const handleChange = (e) => {
     if (e.target.name === "category") {
@@ -33,22 +35,29 @@ export default function GiveSuggestion(props) {
     }
   };
 
+  async function sendData(url, obj) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+    const a = await response.json();
+    return a;
+  }
+
   const handleSubmit = (e) => {
-    console.log(
-      category +
-        "," +
-        activity +
-        "," +
-        cost +
-        "," +
-        timeNeeded +
-        "," +
-        description +
-        "," +
-        photo +
-        " to " +
-        id
-    );
+    sendData(" http://localhost:3001/suggestion", {
+      to: id,
+      from: "mario",
+      category: category,
+      activity: activity,
+      cost: cost,
+      timeNeeded: timeNeeded,
+      description: description,
+      photo: photo,
+    }).then(() => history.push("/home"));
     e.preventDefault();
   };
 

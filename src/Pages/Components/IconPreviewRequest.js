@@ -15,8 +15,8 @@ export default function IconPreview(props) {
   return props.array.map((element) => {
     const style={backgroundImage: "url(" + element.img  + ")"}
     return (
-      <div key={element.name} className='preview' style={style} onClick={()=>GoTo(props.path+'/'+element.id)}>
-        <h3 className="sectionelementtitle">{element.name}</h3>
+      <div key={element.name} className='preview' style={style} onClick={()=>GoTo(props.path+'/'+element.id+'/'+element.name+'/'+element.where)}>
+        <h3 className="sectionelementtitle">{element.name} is asking help for {element.where}</h3>
       </div>
     );
   });

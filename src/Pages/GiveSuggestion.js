@@ -5,7 +5,7 @@ import "../styles/GiveSuggestion.css";
 import { useHistory } from "react-router-dom";
 
 export default function GiveSuggestion(props) {
-  let { id } = useParams();
+  let { id, towho, forwhere } = useParams();
   const [category, setCategory] = useState("");
   const [activity, setName] = useState("");
   const [cost, setCost] = useState("");
@@ -63,10 +63,10 @@ export default function GiveSuggestion(props) {
 
   return (
     <>
-      <img src="" alt="logo" />
+ 
       <div className="suggestioncontainer">
         <h2 className="suggestionHeader">
-          Give a suggestion for <span style={{ color: "#2F7055" }}>{id}</span>
+          Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span> for <span style={{ color: "#2F7055" }}>{forwhere}</span>
         </h2>
         <section>
           <form onSubmit={handleSubmit} className="formsuggestion">

@@ -10,7 +10,6 @@ export default function Navbar(props) {
       <Link className='navlink' to="/home">Home</Link>
       <Link className='navlink' to="/planner">Planners</Link>
       <Link className='navlink' to="/archive">Archives</Link>
-      <p>{history.location.pathname}</p>
     </div>)}
 else{return <div/>}
 }

@@ -19,9 +19,9 @@ useEffect(() => {
   return (
     <>
       <Link to="/ " className="sectiontitle">
-        <h1>HELP MEEEEE!</h1>
+        <h1>Help your friends</h1>
       </Link>
-      <div style={{ display: "flex" }}>
+      <div >
         <IconPreviewRequest array={pendingQuestion} path={'/giveSuggestion'} />
       </div>
     </>

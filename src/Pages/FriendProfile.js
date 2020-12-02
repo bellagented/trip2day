@@ -13,7 +13,6 @@ export default function FriendProfile() {
     let request = await fetch(url);
     let response = await request.json();
     setValue(response);
-    console.log(response);
     return response;
   }
   useEffect(() => {

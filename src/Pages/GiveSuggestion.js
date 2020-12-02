@@ -3,6 +3,25 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/GiveSuggestion.css";
 import { useHistory } from "react-router-dom";
+import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
+const myActivity = [
+  {
+    category: "monument",
+    activity: "big ben",
+    cost: "$$",
+    timeNeeded: "3",
+    description: "hbjbjmn jhbjbkjnbkjnkjnlkllk",
+    photo: "photo",
+  },
+  {
+    category: "restaurant",
+    activity: "chef Ramsay",
+    cost: "$$$$",
+    timeNeeded: "1",
+    description: "khbsdlzxkcnksjdnzclkaldksnclkns",
+    photo: "photo",
+  },
+];
 
 export default function GiveSuggestion(props) {
   let { id, towho, forwhere } = useParams();
@@ -44,12 +63,13 @@ export default function GiveSuggestion(props) {
       body: JSON.stringify(obj),
     });
     const a = await response.json();
+    console.log(a);
     return a;
   }
 
   const handleSubmit = (e) => {
     sendData(" http://localhost:3001/suggestion", {
-      to: id,
+      id: id,
       from: "mario",
       category: category,
       activity: activity,
@@ -66,8 +86,11 @@ export default function GiveSuggestion(props) {
  
       <div className="suggestioncontainer">
         <h2 className="suggestionHeader">
-          Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span> for <span style={{ color: "#2F7055" }}>{forwhere}</span>
+          Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span>{" "}
+          for <span style={{ color: "#2F7055" }}>{forwhere}</span>
         </h2>
+        <LoadSuggestion suggestion ={myActivity} id={id}/>
+        <p>or</p>
         <section>
           <form onSubmit={handleSubmit} className="formsuggestion">
             <select

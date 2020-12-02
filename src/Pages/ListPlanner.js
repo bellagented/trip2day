@@ -45,6 +45,7 @@ export default function ListPlanner() {
         </div>
       </div>
     </div>
-
+  )
+}
 
 

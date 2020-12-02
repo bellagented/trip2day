@@ -11,6 +11,7 @@ import Planner from './Pages/Planner';
 import ListArchive from './Pages/ListArchive';
 import Archive from './Pages/Archive';
 import FriendList from './Pages/FriendList';
+import Navbar from './Pages/Navbar';
 import {
   BrowserRouter as Router,
 Switch,Route
@@ -19,10 +20,11 @@ Switch,Route
 function App() {
   return (
     <Router>
+    <Navbar/>
 <Switch>
 <Route path='/home'><Home/></Route>
 <Route path='/profile/:friend'><FriendProfile/></Route>
-<Route path='/giveSuggestion'><GiveSuggestion/></Route>
+<Route path='/giveSuggestion/:id/:towho/:forwhere'><GiveSuggestion/></Route>
 <Route path='/notification'><Notification/></Route>
 <Route path='/option'><Option/></Route>
 

@@ -1,12 +1,13 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory, Link, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
+import UserContext from "./Components/UserContext";
 
 export default function PreviewFriendRequest(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState(null);
+  const { isAuth, setIsAuth } = useContext(UserContext);
   const history = useHistory();
 
   // const handleChange = (e) => {
@@ -24,15 +25,7 @@ export default function PreviewFriendRequest(props) {
   };
 
   const login = () => {
-    // fetch("http://localhost:3001/auth", {
-    //   method: "POST",
-    //   withCredentials: true,
-    //   body: {
-    //     username: username,
-    //     password: password
-    //   }
-    // }).then((res) => {console.log(res);
-    // /*history.push("/home");*/});
+    
     axios({
     method: "POST",
     
@@ -44,13 +37,17 @@ export default function PreviewFriendRequest(props) {
     url: "http://localhost:3001/auth",
   }).then((res) => {
     console.log(res);
-    if (res.data === "Successfully Authenticated") {
+    if (res.data.username === username) {
       /*history.push("/home");*/
-    };
-    if (res.data === "No User Exists") {
-      console.log(res.config.data + " doesn't appear to exist");
+      console.log("WOW, AUTENTICATO");
+      setIsAuth(true);
+    }
+    else {
       setData(res.data);
     }
+  })
+  .then(() => {
+    console.log(isAuth);
   });
   }
 
@@ -84,7 +81,7 @@ export default function PreviewFriendRequest(props) {
         </form>
         <Link to="/signup">Register your free account!</Link>
         {
-          (data === "No User Exists") ? (<h2>fatti n'account^^</h2>) : (null)
+          (data) ? (<h2>{data} non esiste, fatti n'account^^</h2>) : (null)
         }
       </section>
       </Router>

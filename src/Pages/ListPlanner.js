@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/ListPlanner.css";
+import Demo from "./Components/Schedule";
 
 export default function ListPlanner() {
   let allplans = [
@@ -30,6 +31,7 @@ export default function ListPlanner() {
   });
   return (
     <div>
+          <Demo />
       <h1 className="listplannerheader">Ehi! get ready for your journeys</h1>
       <div>{Plannerlist}</div>
       <div className="plannerlistelement" style={{ display: "flex" }}>
@@ -43,5 +45,6 @@ export default function ListPlanner() {
         </div>
       </div>
     </div>
-  );
-}
+
+
+

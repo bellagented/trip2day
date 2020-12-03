@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import {useState} from "react";
 import './App.css';
 import Home from './Pages/home' ;
 import LoginPage from './Pages/LoginPage';
@@ -11,30 +11,42 @@ import Planner from './Pages/Planner';
 import ListArchive from './Pages/ListArchive';
 import Archive from './Pages/Archive';
 import FriendList from './Pages/FriendList';
+import Navbar from './Pages/Navbar';
+import Signup from './Pages/signup';
 import {
   BrowserRouter as Router,
-Switch,Route
+Switch,
+Route
 } from "react-router-dom";
+import UserContext from "./Pages/Components/UserContext";
+import PrivateRoute from "./Pages/Components/PrivateRoute";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
   return (
+    <UserContext.Provider value={{isAuth, setIsAuth}}>
     <Router>
+    <Navbar/>
 <Switch>
-<Route path='/home'><Home/></Route>
-<Route path='/profile/:friend'><FriendProfile/></Route>
-<Route path='/giveSuggestion'><GiveSuggestion/></Route>
-<Route path='/notification'><Notification/></Route>
-<Route path='/option'><Option/></Route>
+<PrivateRoute path='/home'><Home/></PrivateRoute>
+<PrivateRoute path='/profile/:friend'><FriendProfile/></PrivateRoute>
+<PrivateRoute path='/giveSuggestion/:id/:towho/:forwhere'><GiveSuggestion/></PrivateRoute>
+<PrivateRoute path='/notification'><Notification/></PrivateRoute>
+<PrivateRoute path='/option'><Option/></PrivateRoute>
 
-<Route path='/planner/:idplanner'><Planner/></Route>
-<Route path='/planner'><Planner/></Route>
 
-<Route path='/archive/:idarchive'><Archive/></Route>
-<Route path='/archive'><ListArchive/></Route>
-<Route path='/friendlist'><FriendList/></Route>
+<PrivateRoute path='/planner/:idplanner'><Planner/></PrivateRoute>
+<PrivateRoute path='/planner'><ListPlanner/></PrivateRoute>
+
+
+<PrivateRoute path='/archive/:idarchive'><Archive/></PrivateRoute>
+<PrivateRoute path='/archive'><ListArchive/></PrivateRoute>
+<PrivateRoute path='/friendlist'><FriendList/></PrivateRoute>
 <Route path='/'><LoginPage/></Route>
+<Route path='/signup'><Signup/></Route>
 </Switch>
     </Router>
+    </UserContext.Provider>
   );
 }
 

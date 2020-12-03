@@ -1,0 +1,29 @@
+.suggestioncontainer {
+  background-color: #9bf2cf;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.suggestionHeader {
+  font-family: "Comfortaa", cursive;
+  color: #222222;
+}
+
+.formsuggestion {
+  font-family: "Comfortaa", cursive;
+  color: #222222;
+}
+
+.formelement{
+    border-radius: 10px;
+    margin: 5px;
+    font-family: "Comfortaa", cursive;
+    padding: 5px;
+}
+
+.descriptionsuggestion{
+    text-align: left;
+    height: 15em;
+    width: 25em;
+}

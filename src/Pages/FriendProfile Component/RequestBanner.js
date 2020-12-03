@@ -1,24 +1,33 @@
 import React from "react";
-import { useHistory } from 'react-router-dom'
+import {useState } from "react";
+import { useHistory } from "react-router-dom";
 
-const request = ["Rome", "Barcellona"];
 
 export default function RequestBanner(props) {
-    const history = useHistory();
+  const history = useHistory();
 
   const GoTo = (path) => {
     history.push(path);
   };
 
-  return(<div className='requestbanner'>{request.map((destination) => {
-    return (
-      <div key={destination}>
-        <p>
-          {props.nickname} is looking for suggestions for a new trip to{" "}
-          {destination}
-          <button onClick={()=> GoTo('/giveSuggestion')}>Give suggestion </button>
-        </p>
-      </div>
-    )
-  })}</div> );
+  return (
+    <div className="requestbanner">
+    <p>{props.request.length===0? 'no trips planned':''}</p>
+      {props.request.map((destination) => {
+        return (
+          
+          <div key={destination.id}>
+         
+            <p>
+              I'm looking for suggestions for a new trip to{" "}
+              {destination.where}
+              <button onClick={() => GoTo("/giveSuggestion/"+destination.id+'/'+props.name+'/'+destination.where)}>
+                Give suggestion{" "}
+              </button>
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

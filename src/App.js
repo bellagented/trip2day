@@ -34,8 +34,10 @@ function App() {
 <PrivateRoute path='/notification'><Notification/></PrivateRoute>
 <PrivateRoute path='/option'><Option/></PrivateRoute>
 
+
 <PrivateRoute path='/planner/:idplanner'><Planner/></PrivateRoute>
 <PrivateRoute path='/planner'><ListPlanner/></PrivateRoute>
+
 
 <PrivateRoute path='/archive/:idarchive'><Archive/></PrivateRoute>
 <PrivateRoute path='/archive'><ListArchive/></PrivateRoute>

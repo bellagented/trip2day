@@ -27,7 +27,7 @@ function App() {
 <Route path='/option'><Option/></Route>
 
 <Route path='/planner/:idplanner'><Planner/></Route>
-<Route path='/planner'><ListPlanner/></Route>
+<Route path='/planner'><Planner/></Route>
 
 <Route path='/archive/:idarchive'><Archive/></Route>
 <Route path='/archive'><ListArchive/></Route>

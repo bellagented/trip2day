@@ -1,12 +1,20 @@
 .archivecontainer {
   font-family: "Comfortaa", cursive;
   color: #222222;
-
 }
 * {
-    box-sizing: border-box;
-  }
-  
+  box-sizing: border-box;
+}
+
+.journeytitle {
+  color: white;
+  background-color: #2f7055;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
@@ -24,6 +32,7 @@
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+  margin-top: 50px;
 }
 
 /* Container around content */
@@ -135,4 +144,12 @@
 
 .locationimage {
   width: 100%;
+  border-radius: 5px;
+}
+
+.archivebutton {
+  border-radius: 5px;
+  background-color: #2f7055;
+  font-family: "Comfortaa", cursive;
+  color: #222222;
 }

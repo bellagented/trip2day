@@ -31,15 +31,16 @@ export default function Archive() {
   return (
       <div className='archivecontainer'>
     <div className="timeline">
-      <h1>{journey.title}</h1>
+      <h1 className="journeytitle">{journey.title}</h1>
       {journey.activity.map((place, i) => {
           let side = (i+2)%2===0? 'container left':'container right';
         return (
-          <div className={side}>
-            <div class="content">
+          <div className={side} key={place.name}>
+            <div className="content">
             <img src={place.img} alt='location' className='locationimage'/>
               <h2>{place.name}</h2>
               <p>{place.description}</p>
+              <button className="archivebutton">Add to your plan</button>
             </div>
           </div>
         );

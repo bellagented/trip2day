@@ -79,7 +79,7 @@ export default function PreviewFriendRequest(props) {
               onChange={e => setPassword(e.target.value)}
             />
           </label>
-          <button onClick={() => loginWithRedirect()}>Log In</button>
+          <button onClick={() => loginWithRedirect().then(history.push("/home"))}>Log In</button>
         </form>
         <Link to="/signup">Register your free account!</Link>
         {

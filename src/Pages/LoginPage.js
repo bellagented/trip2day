@@ -2,8 +2,10 @@ import React, { useState, useContext } from "react";
 import { useHistory, Link, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 import UserContext from "./Components/UserContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function PreviewFriendRequest(props) {
+  const { loginWithRedirect } = useAuth0();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState(null);
@@ -77,7 +79,7 @@ export default function PreviewFriendRequest(props) {
               onChange={e => setPassword(e.target.value)}
             />
           </label>
-          <button onClick={login}>Log In</button>
+          <button onClick={() => loginWithRedirect()}>Log In</button>
         </form>
         <Link to="/signup">Register your free account!</Link>
         {

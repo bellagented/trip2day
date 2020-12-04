@@ -5,12 +5,15 @@ import PreviewPlanner from "./Home component/PreviewPlanner";
 import PreviewFriendRequest from "./Home component/PreviewFriendRequest";
 import PreviewFriend from "./Home component/PreviewFriend";
 import ArchivePreview from "./Home component/ArchivePreview";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Home() {
   const [data, setData] = useState({});
   const [profile, setProfile] = useState({});
   const [friendList, setFriendList] = useState([]);
   const [planners, setPlanners] = useState([]);
+  const { user } = useAuth0();
+  const { name } = user;
 
   async function getData(url, setValue) {
     let request = await fetch(url);
@@ -51,10 +54,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="homecontainer">
-      <h1 className="homeheader">
-        Welcome <span style={{ color: "#2F7055" }}>{profile.name}</span>
-      </h1>
+    <div className='homecontainer'>
+    <h1 className='homeheader'>Welcome <span style={{color:'#2F7055'}}>{name}</span></h1>
       {/* <ProfileHeadbar profile={profile} /> */}
       <PreviewPlanner planners={planners} />
       <PreviewFriendRequest />

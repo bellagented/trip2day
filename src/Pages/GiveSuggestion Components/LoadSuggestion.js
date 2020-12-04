@@ -20,7 +20,7 @@ export default function LoadSuggestion(props) {
 
   const handleChange = (e) => {
     setSelectedEvent(
-      props.suggestion.find((suggestion) => {
+      props.suggestion.activity.find((suggestion) => {
         return suggestion.activity === e.target.value;
       })
     );
@@ -42,15 +42,14 @@ export default function LoadSuggestion(props) {
   return (
     <>
       <form onSubmit={handleSubmit} className="formsuggestion">
-        <label>Select from your archive:</label>
         <select
           className="formelement"
           onChange={handleChange}
           name="activity"
           required
         >
-          <option>-select a plan</option>
-          {props.suggestion.map((mysuggestion) => {
+          <option>-select activity</option>
+          {props.suggestion.activity.map((mysuggestion) => {
             return (
               <option key={mysuggestion.activity}>
                 {mysuggestion.activity}

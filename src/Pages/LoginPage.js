@@ -40,7 +40,7 @@ export default function PreviewFriendRequest(props) {
   }).then((res) => {
     console.log(res);
     if (res.data.username === username) {
-      /*history.push("/home");*/
+      history.push("/home");
       console.log("WOW, AUTENTICATO");
       setIsAuth(true);
     }

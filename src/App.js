@@ -44,6 +44,7 @@ function App() {
 <PrivateRoute path='/archive/:idarchive' component={Archive}/>
 <PrivateRoute path='/archive' component={ListArchive}/>
 <PrivateRoute path='/friendlist' component={FriendList}/>
+
 <Route path='/'><LoginPage/></Route>
 <Route path='/signup'><Signup/></Route>
 </Switch>

@@ -1,27 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/GiveSuggestion.css";
 import { useHistory } from "react-router-dom";
 import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
-const myActivity = [
-  {
-    category: "monument",
-    activity: "big ben",
-    cost: "$$",
-    timeNeeded: "3",
-    description: "hbjbjmn jhbjbkjnbkjnkjnlkllk",
-    photo: "photo",
-  },
-  {
-    category: "restaurant",
-    activity: "chef Ramsay",
-    cost: "$$$$",
-    timeNeeded: "1",
-    description: "khbsdlzxkcnksjdnzclkaldksnclkns",
-    photo: "photo",
-  },
-];
+import LoadPlace from "./GiveSuggestion Components/LoadPlace";
+
 
 export default function GiveSuggestion(props) {
   let { id, towho, forwhere } = useParams();
@@ -31,7 +15,19 @@ export default function GiveSuggestion(props) {
   const [timeNeeded, setTimeNeeded] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
+  const [myActivity, setMyActivity] = useState([]);
+  const [suggestion, setSuggestion] = useState({activity:[{activity:'select a place'}]});
   const history = useHistory();
+
+  async function getData(url, setValue) {
+    let request = await fetch(url);
+    let response = await request.json();
+    setValue(response);
+    return response;
+  }
+  useEffect(() => {
+    getData("http://localhost:3001/mysuggestion", setMyActivity);
+  }, []);
 
   const handleChange = (e) => {
     if (e.target.name === "category") {
@@ -89,7 +85,8 @@ export default function GiveSuggestion(props) {
           Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span>{" "}
           for <span style={{ color: "#2F7055" }}>{forwhere}</span>
         </h2>
-        <LoadSuggestion suggestion ={myActivity} id={id}/>
+        <LoadPlace setEvent={setSuggestion} suggestion={myActivity}/>
+        <LoadSuggestion suggestion ={suggestion} id={id}/>
         <p>or</p>
         <section>
           <form onSubmit={handleSubmit} className="formsuggestion">

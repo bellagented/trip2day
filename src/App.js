@@ -22,7 +22,7 @@ import UserContext from "./Pages/Components/UserContext";
 import PrivateRoute from "./Pages/Components/PrivateRoute";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
   return (
     <UserContext.Provider value={{isAuth, setIsAuth}}>
     <Router>

@@ -28,7 +28,7 @@ export default function LoadSuggestion(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-     sendData(" http://localhost:3001/suggestion", {
+     sendData(" http://localhost:3001/ReqSuggestion", {
       id: props.id,
       from: "mario",
       category: selectedEvent.category,

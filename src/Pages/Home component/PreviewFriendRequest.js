@@ -13,7 +13,7 @@ async function getData(url, setValue) {
   return response;
 }
 useEffect(() => {
-  getData("http://localhost:3001/suggestion", setPendingQuestion)
+  getData("http://localhost:3001/ReqSuggestion", setPendingQuestion)
   }
 , []);
   return (

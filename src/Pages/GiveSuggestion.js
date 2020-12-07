@@ -64,7 +64,7 @@ export default function GiveSuggestion(props) {
   }
 
   const handleSubmit = (e) => {
-    sendData(" http://localhost:3001/suggestion", {
+    sendData(" http://localhost:3001/ReqSuggestion", {
       id: id,
       from: "mario",
       category: category,

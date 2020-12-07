@@ -1,5 +1,10 @@
 import React from "react";
-
-export default function Option(){
-return(<h1>EHI RICK, SONO UN Option</h1>)
+import Upload from "./Components/uploadButton.js";
+export default function Option() {
+  return (
+    <>
+      <h1>EHI RICK, SONO UN Option</h1>
+      <Upload />
+    </>
+  );
 }

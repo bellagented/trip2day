@@ -1,0 +1,20 @@
+.navbar{ 
+    font-family: "Comfortaa", cursive;
+    padding-left: 10px;
+    background-color: #9bf2cf;
+    color:#222222;
+    
+}
+.appname{
+    padding-right: 10px;
+}
+.navlink{
+    padding: 10px;
+    text-decoration: none;
+    color:#222222;
+    text-align: justify;
+}
+.navlink:hover{
+    color:white;
+    background-color: #2f7055;
+}

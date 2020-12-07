@@ -1,14 +1,33 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "../styles/GiveSuggestion.css";
+import { useHistory } from "react-router-dom";
+import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
+import LoadPlace from "./GiveSuggestion Components/LoadPlace";
+
 
 export default function GiveSuggestion(props) {
- 
+  let { id, towho, forwhere } = useParams();
   const [category, setCategory] = useState("");
   const [activity, setName] = useState("");
   const [cost, setCost] = useState("");
   const [timeNeeded, setTimeNeeded] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
+  const [myActivity, setMyActivity] = useState([]);
+  const [suggestion, setSuggestion] = useState({activity:[{activity:'select a place'}]});
+  const history = useHistory();
+
+  async function getData(url, setValue) {
+    let request = await fetch(url);
+    let response = await request.json();
+    setValue(response);
+    return response;
+  }
+  useEffect(() => {
+    getData("http://localhost:3001/mysuggestion", setMyActivity);
+  }, []);
 
   const handleChange = (e) => {
     if (e.target.name === "category") {
@@ -27,91 +46,130 @@ export default function GiveSuggestion(props) {
       setDescription(e.target.value);
     }
     if (e.target.name === "photo") {
-        setPhoto(e.target.value);
-      }
+      setPhoto(e.target.value);
+    }
   };
 
+  async function sendData(url, obj) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+    const a = await response.json();
+    console.log(a);
+    return a;
+  }
+
   const handleSubmit = (e) => {
-    console.log(
-      category + "," + activity + "," + cost + "," + timeNeeded + "," + description + "," + photo
-    );
+    sendData(" http://localhost:3001/suggestion", {
+      id: id,
+      from: "mario",
+      category: category,
+      activity: activity,
+      cost: cost,
+      timeNeeded: timeNeeded,
+      description: description,
+      photo: photo,
+    }).then(() => history.push("/home"));
     e.preventDefault();
   };
 
   return (
     <>
-      <img src="" alt="logo" />
-  <h2>Give a suggestion for {}</h2>
-      <section>
-        <form onSubmit={handleSubmit}>
-          <select
-            value={category}
-            onChange={handleChange}
-            name="category"
-            required
-          >
-            <option value="Select a Category">Select a Category</option>
-            <option value="Restaurant">Restaurant</option>
-            <option value="Art/Museum">Art/Museum</option>
-            <option value="Beach/Mountain/Nature">Beach/Mountain/Nature</option>
-            <option value="Activity/Tour">Activity/Tour</option>
-            <option value="Instagram Spot">Activity/Tour</option>
-          </select>
+ 
+      <div className="suggestioncontainer">
+        <h2 className="suggestionHeader">
+          Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span>{" "}
+          for <span style={{ color: "#2F7055" }}>{forwhere}</span>
+        </h2>
+        <LoadPlace setEvent={setSuggestion} suggestion={myActivity}/>
+        <LoadSuggestion suggestion ={suggestion} id={id}/>
+        <p>or</p>
+        <section>
+          <form onSubmit={handleSubmit} className="formsuggestion">
+            <select
+              className="formelement"
+              value={category}
+              onChange={handleChange}
+              name="category"
+              required
+            >
+              <option value="Select a Category">Select a Category</option>
+              <option value="Restaurant">Restaurant</option>
+              <option value="Art/Museum">Art/Museum</option>
+              <option value="Beach/Mountain/Nature">
+                Beach/Mountain/Nature
+              </option>
+              <option value="Activity/Tour">Activity/Tour</option>
+              <option value="Instagram Spot">Activity/Tour</option>
+            </select>
 
-          <br />
+            <br />
 
-          <input
-            name="nameActivity"
-            type="text"
-            value={activity}
-            onChange={handleChange}
-            placeholder="Name Activity"
-            required
-          />
+            <input
+              className="formelement"
+              name="nameActivity"
+              type="text"
+              value={activity}
+              onChange={handleChange}
+              placeholder="Name Activity"
+              required
+            />
 
-          <br />
+            <br />
 
-          <input
-            name="cost"
-            type="text"
-            value={cost}
-            onChange={handleChange}
-            placeholder="Cost per person"
-            required
-          />
+            <input
+              className="formelement"
+              name="cost"
+              type="text"
+              value={cost}
+              onChange={handleChange}
+              placeholder="Cost per person"
+              required
+            />
 
-          <br />
+            <br />
 
-          <input
-            name="time-needed"
-            type="text"
-            value={timeNeeded}
-            onChange={handleChange}
-            placeholder="Expected time"
-            required
-          />
+            <input
+              className="formelement"
+              name="time-needed"
+              type="text"
+              value={timeNeeded}
+              onChange={handleChange}
+              placeholder="Expected time"
+              required
+            />
 
-          <br />
+            <br />
 
-          <input
-            name="description"
-            type="text"
-            value={description}
-            onChange={handleChange}
-            placeholder="Description"
-            required
-          />
-          <br/>
-          <label>
-              Add a photo
-              <br/>
-          <input type="file"  name="photo"  onChange={handleChange} />
-          </label>
-          <br/>
+            <textarea
+              className="formelement descriptionsuggestion"
+              name="description"
+              type="text"
+              value={description}
+              onChange={handleChange}
+              placeholder="Description"
+              required
+            />
+            <br />
+            <label>
+              Add a photo:
+              <input
+                className="formelement"
+                type="file"
+                name="photo"
+                onChange={handleChange}
+              />
+            </label>
+            <br />
 
-          <input type="submit" value="Submit" />
-        </form>
-      </section>
+            <input className="formelement" type="submit" value="Submit" />
+          </form>
+        </section>
+      </div>
     </>
   );
 }

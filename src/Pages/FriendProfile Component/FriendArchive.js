@@ -38,7 +38,7 @@ export default function RequestBanner(props) {
             key={element.name}
               className="previewarchive"
               style={style}
-              onClick={() => GoTo("/home")}
+              onClick={() => GoTo("/archive/idarchive")}
             >
               <h3 className="archivetitle">{element.name}</h3>
             </div>

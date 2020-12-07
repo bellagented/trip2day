@@ -1,0 +1,26 @@
+.listplannerheader {
+  font-family: "Comfortaa", cursive;
+  padding: 10px;
+
+  color: #222222;
+}
+
+.plannerlistelement {
+  font-family: "Comfortaa", cursive;
+  background-color: #9bf2cf;
+  color: #222222;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.plannerlistelement:hover {
+cursor: pointer;
+  }
+.plannerlistelement img {
+  height: 10em;
+  width: 10em;
+  border-radius: 5px;
+}
+.plannerlistelement div{
+    padding-left: 10px;
+}

@@ -8,6 +8,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import rootReducer from "./Pages/redux/uploadFile/root-reducer";
+import { BrowserRouter as Router } from "react-router-dom";
+import Auth0ProviderWithHistory from "./Pages/Components/auth/auth0-provider-with-history";
 
 const middleware = [thunk];
 const composeEnchancers =
@@ -19,9 +21,13 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Auth0ProviderWithHistory>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById("root")
 );
 

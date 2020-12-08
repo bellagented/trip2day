@@ -33,7 +33,7 @@ export default function Home() {
 
   const createPlanners = (planners) => {
     const plannerArray = planners.map((planner) => {
-      return { name: planner.where, img: planner.img };
+      return { name: planner.where, img: planner.img, id:planner.id };
     });
     return setPlanners(plannerArray);
   };
@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    getData("http://localhost:3001/nickname/", setData).then((data) => {
+    getData("http://localhost:3001/"+name+"/", setData).then((data) => {
       createProfile(data);
       createFriendList(data.friendList);
       createPlanners(data.planner);

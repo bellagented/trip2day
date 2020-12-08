@@ -1,7 +1,5 @@
-import React, { useState, useContext } from "react";
-import { useHistory, Link, BrowserRouter as Router } from "react-router-dom";
-import axios from "axios";
-import UserContext from "./Components/UserContext";
+import React from "react";
+import { useHistory, BrowserRouter as Router } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import BackgroundVideo from './BackgroundVideo'
 import Logo from '../styles/trip2daylogo.png'
@@ -16,6 +14,7 @@ export default function PreviewFriendRequest(props) {
     <>
     <BackgroundVideo/>
     <Router>
+
       <div className='viewport-header'>
      
       <img src={Logo} alt="logo" className='logo' />
@@ -27,6 +26,7 @@ export default function PreviewFriendRequest(props) {
         
      
       </div>
+     
       </Router>
     </>
   );

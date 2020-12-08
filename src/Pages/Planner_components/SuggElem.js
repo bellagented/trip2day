@@ -20,7 +20,7 @@ export default function SuggElem(props) {
         <p key={props.id}> {props.from} {props.store}</p>
 
         <div className='grid-button'>
-          <button  className='suggestions-button' onClick={patchRequest}>Accpet</button>
+          <button  className='suggestions-button' onClick={patchRequest}>Accept</button>
           <button  className='suggestions-button' onClick={deleteRequest}>Delete</button>
         </div>
 

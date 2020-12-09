@@ -74,7 +74,7 @@ export default function Planner(){
       })}
   </div>
 </div>
-      <Demo/>
+      <Demo date={"2020-12-25"}/>
       
       
       <div className="wrapper">

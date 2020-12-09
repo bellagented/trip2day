@@ -2,11 +2,11 @@ import React from 'react'
 import { useState } from "react";
 import './planner.css';
 
-export default function InfoTrip() {
-  const [city, setCity] = useState("");
-  const [title, setTitle] = useState("");
-  const [fromDate, setFromDate] = useState("");
-  const [toDate, setToDate] = useState("");
+export default function InfoTrip(props) {
+  const [city, setCity] = useState(props.defaultValue.city);
+  const [title, setTitle] = useState(props.defaultValue.title);
+  const [fromDate, setFromDate] = useState(props.defaultValue.fromDate);
+  const [toDate, setToDate] = useState(props.defaultValue.toDate);
 
   const handleChange = (e) => {
     if (e.target.name === "city") {
@@ -23,7 +23,13 @@ export default function InfoTrip() {
       }
   };
   const handleSubmit = (e) => {
-    console.log(city + "," + title + "," + fromDate + ',' + toDate);
+    props.setData({
+      city: city,
+      title: title,
+      fromDate: fromDate,
+      toDate: toDate,
+      creationMode: false,
+    })
     e.preventDefault();
   };
     return (

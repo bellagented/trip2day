@@ -15,11 +15,15 @@ export default function IconPreview(props) {
   return props.array.map((element) => {
     const style={backgroundImage: "url(" + element.img  + ")"}
     return (
-
-      <div key={element.name} className='preview' style={style} onClick={()=>GoTo(props.path)}>
-        <h3 className="sectionelementtitle">{element.name}</h3>
-
-      </div>
+      
+      <section className="preview-grid">
+        <div key={element.name} className='preview-city' style={style} onClick={()=>GoTo(props.path)}>
+        </div>
+        <div>
+          <h3 className="sectionelementtitle">{element.name}</h3>
+        </div> 
+      </section>
+     
     );
   });
 }

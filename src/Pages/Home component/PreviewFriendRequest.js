@@ -17,13 +17,17 @@ useEffect(() => {
   }
 , []);
   return (
-    <>
-      <Link to="/ " className="sectiontitle">
-        <h1>Help your friends</h1>
-      </Link>
-      <div >
+    <section className="containerPreview-friends">
+      <div className="sectiontitle">
+        <Link to="/ ">
+          <h2 className="title">Help your friends</h2>
+        </Link>
+      </div>
+
+      <div className="contaniterfriends">
         <IconPreviewRequest array={pendingQuestion} path={'/giveSuggestion'} />
       </div>
-    </>
+    </section>
   );
 }
+

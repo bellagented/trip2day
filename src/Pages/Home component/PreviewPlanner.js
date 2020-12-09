@@ -5,24 +5,28 @@ import { Link } from "react-router-dom";
 
 export default function PreviewPlanner(props) {
   return (
-    <>
-      <Link className="sectiontitle" to="/planner ">
-        <h1 >Your plans</h1>
-      </Link>
-      <p className="sectionsubtitle">Select a plan to open</p>
-      <div style={{ display: "flex" }}>
+    <section className="containerPreview-grid">
+      <div className="sectiontitle">
+        <Link to="/planner ">
+          <h2 className="title" >Your plans</h2>
+        </Link>
+        {/* <div className="sectionsubtitle">
+          <h3 className="subtitle" >Select a plan to open</h3>
+        </div> */}
+      </div>
+      
+
+      <div className="contaniterplans">
         <IconPreview array={props.planners} path={'/planner/idplanner'}/>
-     
-      <div
-        className="preview"
-        style={{
-          backgroundImage:
-            "url(https://cdn2.iconfinder.com/data/icons/50-material-design-round-corner-style/44/Add-512.png)",
-        }}
-      >
-        <h3 className="sectionelementtitle">Add planner</h3>
+        <IconPreview array={props.planners} path={'/planner/idplanner'}/>
+        <IconPreview array={props.planners} path={'/planner/idplanner'}/>
+  
+        <div className="preview"> 
+          <p className="add">+</p>
+          <h3 className="sectionelementtitle">Add planner</h3>
+        </div>
+
       </div>
-      </div>
-    </>
+    </section>
   );
 }

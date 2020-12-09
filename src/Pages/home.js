@@ -54,13 +54,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='homecontainer'>
-    <h1 className='homeheader'>Welcome <span style={{color:'#2F7055'}}>{name}</span></h1>
-      {/* <ProfileHeadbar profile={profile} /> */}
-      <PreviewPlanner planners={planners} />
-      <PreviewFriendRequest />
-      <PreviewFriend friendList={friendList} />
-      <ArchivePreview />
+    <div className='home-header-grid'>
+      <header className='homecontainer'>
+        <h2 className='homecontent-container' >Lorem ipsum  <br /> dolor sit amet consectetur elit.</h2>
+        <h2 className='homecontent-container-account'> Welcome {name} </h2>
+        {/* <ProfileHeadbar profile={profile} /> */}
+      </header>
+      <section className='preview-info'>
+        <PreviewPlanner planners={planners} />
+        <PreviewFriendRequest />
+        <PreviewFriend friendList={friendList} />
+        <ArchivePreview />
+      </section>
     </div>
   );
   }

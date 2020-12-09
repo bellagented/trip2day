@@ -7,11 +7,16 @@ import { Link } from "react-router-dom";
 
 export default function PreviewFriend(props) {
   return (
-    <div >
-      <Link className='sectiontitle' to="/ "><h1 >FRATM</h1></Link>
-      <div style={{display:'flex'}}>
-      <IconPreviewFriend array={props.friendList} path={'/profile/'} />
+    <section className="containerPreview-youfriends"  >
+      <div>
+      <Link className='sectiontitle' to="/ ">
+        <h2 className="title">Friends</h2></Link>
+       </div>
+
+      <div className="preview-friend">
+        <IconPreviewFriend array={props.friendList} path={'/profile/'} />
       </div>
-    </div>
+
+    </section>
   );
 }

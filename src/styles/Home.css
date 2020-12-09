@@ -1,62 +1,183 @@
-.homecontainer {
-  padding: 20px;
+/* HEADER */
+
+.home-header-grid{
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 50px;
 }
 
-.homeheader {
-  font-family: "Comfortaa", cursive;
-  text-decoration: none;
-  color: #222222;
-  background-color: #9bf2cf;
-  padding: 20px 10px 20px 10px;
+.homecontainer{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 15px;
+}
+
+.homecontent-container {
+display: grid;
+height: 280px;
+font-family: "Comfortaa", cursive;
+text-decoration: none;
+color:#9bf2cf;
+background-color: #222222;
+border-radius: 12px;
+margin-top: -2px;
+padding: 15px;
+font-weight: 500;
+}
+
+h2.homecontent-container-account{
+display: grid;
+height: 280px;
+border-radius: 12px;
+margin-top: -2px;
+padding: 15px;
+background-color: #9bf2cf;
+text-align: end;
+font-size: 1em;
+text-decoration: underline;
+font-weight: 500;
+}
+
+.preview-info{
+  display: grid;
+  margin-top:50px;
+}
+
+/* SECTION PREVIEW PLANS*/
+
+.containerPreview-grid{
+display: grid;
+background-color: #f0f0f0;
+border-radius: 12px;
+}
+
+.sectiontitle {
+font-family: "Comfortaa", cursive;
+text-decoration: none;
+color: #222222;
+display: grid;
+padding-left: 15px;
+width: 23%;
+}
+
+.title{
+display: grid;
+font-weight: 600;
+color:#222222;
+height: 50px;
+border-radius: 6px;
+padding: 5px;
+background-color:#9bf2cf;
+font-size: 1em;
+}
+
+.title:hover{
+color:#9bf2cf;
+background-color: #222222;
+}
+
+.contaniterplans{
+margin-top: 30px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+padding-left: 15px;
+}
+
+.preview-grid{
+width: 100%;
+height: 90%;
+}
+
+.preview-city{
+display: grid;
+width: 90%;
+height: 90%;
+border-radius: 12px;
+background-size: cover;
+background-position: center;
+justify-self: center;
+background-color: #222222;
+}
+
+.preview-city:hover {
+  cursor: pointer;
 }
 
 .preview {
-  width: 20em;
-  height: 20em;
-  border-radius: 5%;
-  margin: 5px;
-  background-size: cover;
-  background-position: center;
+padding-right: 15px;
 }
-.preview:hover {
-  cursor: pointer;
-  border: 2px solid #9bf2cf;
+
+.preview:hover{
+cursor: pointer;
 }
-.sectiontitle {
-  font-family: "Comfortaa", cursive;
-  text-decoration: none;
-  color: #222222;
-}
-.sectionsubtitle {
-  font-family: "Comfortaa", cursive;
-  text-decoration: none;
-  color: #5b5b5b;
+
+.add{
+display: grid;
+width: 100%;
+height: 81%;
+align-items: center;
+text-align: center;
+font-size: 18em;
+margin: auto;
+background-color: #9bf2cf ;
+border-radius: 12px;
 }
 
 .sectionelementtitle {
-  margin: 10px;
-  padding-left: 10px;
+  padding: 5px;
+  width: 90%;
   font-family: "Comfortaa", cursive;
   color: #222222;
-  background-color: #9bf2cf;
-  opacity: 70%;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: #9bf2cf ;
+}
+
+.sectionelementtitle:hover{
+cursor: pointer;
+color:#9bf2cf;
+background-color: #222222;
+}
+
+/* SECTION HELPPREVIEW FRIENDS*/
+
+
+.containerPreview-friends{
+margin-top: 60px;
+display: grid;
+background-color: #f0f0f0;
+padding: 15px;
+border-radius: 12px;
+height: 400px;
+}
+
+.contaniterfriends{
+margin-top: 60px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+overflow: scroll;
 }
 
 .previewrequest {
+  margin-top: 60px;
   border-radius: 5px;
   margin: 5px;
-  background-color: #9bf2cf;
+  /* background-color: #9bf2cf; */
   font-family: "Comfortaa", cursive;
+  /* align-items: center;  */
+  background-color: #222222;  
+  font-weight: 300;
+  height: 200px;
 }
 
 .previewrequest:hover {
-  cursor: pointer;
-  background-color: #2f7055;
+cursor: pointer;
+
 }
 
 .imgrequestpreview {
-  width: 5em;
-  height: 5em;
+  width: 30%;
+  height: 100%;
   border-radius: 5px;
   background-size: cover;
   background-position: center;
@@ -64,6 +185,30 @@
 
 .sectionelementtitlerequest {
   font-family: "Comfortaa", cursive;
-  color: #222222;
+  color:#9bf2cf;
   padding-left: 10px;
+  font-size: 1em;
+}
+
+.sectionelementtitlerequest:hover{
+  text-decoration: underline;
+}
+
+/* SECTION PREVIEW FRIENDS*/
+
+.containerPreview-youfriends{
+  border: 2px solid blue;
+  margin-top: 60px;
+  display: grid;
+  border-radius: 12px;
+  background-color: #f0f0f0;
+
+}
+
+
+
+.preview-friend{
+  height: 100%;
+  width: 100%;
+  border: 2px solid red;
 }

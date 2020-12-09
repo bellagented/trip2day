@@ -23,13 +23,7 @@ export default function Planner() {
   const [selectedPlan, setSelectedPlan] = useState(selectedplan);
   const [startingDate, setStartingDate] = useState("2020-01-01");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [plannedAppointments, setPlannedAppointments] = useState([
-    {
-      title: "London Eye",
-      startDate: new Date(2021, 7, 26, 9, 30),
-      endDate: new Date(2021, 7, 26, 11, 30),
-    },
-  ]);
+  const [plannedAppointments, setPlannedAppointments] = useState([]);
   const { user } = useAuth0();
   const { name } = user;
   let { idplanner } = useParams();
@@ -89,28 +83,27 @@ export default function Planner() {
     return response.json();
   };
 
-  //salvare suggerimenti
+  //salvare nel proprio piano
   const savesuggestion = function (id) {
     const position = suggestions.findIndex((e) => {
       return e.id === id;
     });
-    let copyarray = suggestions.slice();
-    let copyelement = copyarray[position];
-    copyelement.accepted = true;
-    copyarray[position] = copyelement;
-    setSugg(copyarray);
+    let copySugg = suggestions.slice();
+    let savedElement = copySugg[position];
+    let copyarray = plannedAppointments.slice();
+    copyarray.push(savedElement);
+    setPlannedAppointments(copyarray);
   };
 
-  //rifiutare suggerimenti
+  //rimuovre dal piano
   const refusesuggestion = function (id) {
-    const position = suggestions.findIndex((e) => {
+    const position = plannedAppointments.findIndex((e) => {
       return e.id === id;
     });
-    let copyarray = suggestions.slice();
-    let copyelement = copyarray[position];
-    copyelement.accepted = false;
-    copyarray[position] = copyelement;
-    setSugg(copyarray);
+    let copyarray = plannedAppointments.slice();
+    copyarray.splice(position, 1);
+
+    setPlannedAppointments(copyarray);
   };
 
   return (
@@ -151,17 +144,15 @@ export default function Planner() {
       <div className="container">
         <h2 className="text-important-data">Suggestions saved</h2>
         <div className="list">
-          {suggestions.map((e) => {
-            if (e.accepted === true)
-              return (
-                <SuggElemSaved
-                  key={e.id}
-                  id={e.id}
-                  fromWho={e.fromWho}
-                  name={e.name}
-                  refuseSugg={refusesuggestion}
-                />
-              );
+          {plannedAppointments.map((e) => {
+            return (
+              <SuggElemSaved
+                key={e.id}
+                id={e.id}
+               event={e}
+                refuseSugg={refusesuggestion}
+              />
+            );
           })}
         </div>
       </div>
@@ -172,16 +163,14 @@ export default function Planner() {
             <h2 className="text-important-data">Suggestions from friends</h2>
             <div className="list">
               {suggestions.map((e) => {
-                if (e.accepted === false)
-                  return (
-                    <SuggElem
-                      key={e.id}
-                      id={e.id}
-                      fromWho={e.fromWho}
-                      name={e.name}
-                      saveSugg={savesuggestion}
-                    />
-                  );
+                return (
+                  <SuggElem
+                    key={e.id}
+                    id={e.id}
+                    suggestion={e}
+                    saveSugg={savesuggestion}
+                  />
+                );
               })}
             </div>
           </div>

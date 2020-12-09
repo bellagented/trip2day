@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function SuggElem(props) {
-
+const [show, setShow] = useState(false);
 
   return (
-      <div className='suggestions-info'>
-        <p key={props.id}> {props.fromWho} suggested {props.name}</p>
+      <div className='suggestions-info' onClick={()=>{setShow(!show)}}>
+        <p key={props.id}> {props.suggestion.fromWho} suggested {props.suggestion.name}</p>
+{show? <div className='grid-button'>
 
-        <div className='grid-button'>
-          <button  className='suggestions-button' onClick={()=>{props.saveSugg(props.id)}} >Accept</button>
-        </div>
+<p>category: {props.suggestion.category}</p>
+<p>{props.suggestion.description}</p>
+<p>cost: {props.suggestion.cost}</p>
+<p>time needed: {props.suggestion.timeNeeded}</p>
+          <button  className='suggestions-button' onClick={()=>{props.saveSugg(props.id)}} >add to plan</button>
+        </div>:<div> </div>}
+        
 
       </div>
   )

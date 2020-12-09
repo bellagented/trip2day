@@ -25,7 +25,7 @@ export default class Demo extends React.PureComponent {
     super(props);
     this.state = {
       data: appointments,
-      currentDate: getCurrentDate,
+      currentDate: this.props.date,
       currentViewName: "week",
 
       addedAppointment: {},
@@ -81,7 +81,7 @@ export default class Demo extends React.PureComponent {
 
   render() {
     const {
-      getCurrentDate,
+      currentDate,
       data,
       currentViewName,
       addedAppointment,
@@ -93,7 +93,7 @@ export default class Demo extends React.PureComponent {
       <Paper>
         <Scheduler data={data} height={660}>
           <ViewState
-            currentDate={getCurrentDate}
+            currentDate={currentDate}
             onCurrentDateChange={this.currentDateChange}
             currentViewName={currentViewName}
             onCurrentViewNameChange={this.currentViewNameChange}
@@ -117,7 +117,7 @@ export default class Demo extends React.PureComponent {
           <Toolbar />
           <ViewSwitcher />
           <DateNavigator />
-          <TodayButton />
+          {/* <TodayButton /> */}
           <Appointments />
           <AppointmentTooltip showOpenButton showDeleteButton />
           <AppointmentForm />

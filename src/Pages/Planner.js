@@ -133,6 +133,7 @@ const url="http://localhost:3001/" + name + "/planner/" + idplanner;
         isSaved:true,
       }); patchPlan(url, selectedPlan);}}>Save plan!</button>}
 
+
       
       <div className="container">
         <h2 className="text-important-data">Suggestions saved</h2>
@@ -172,7 +173,7 @@ const url="http://localhost:3001/" + name + "/planner/" + idplanner;
           })}
         </div>
       </div>
-      <Demo />
+      <Demo date={"2020-12-25"}/>
 
       <div className="wrapper"></div>
     </div>

@@ -45,7 +45,7 @@ const url="http://localhost:3001/" + name + "/planner/" + idplanner;
     });
   }, []);
 
-  // const [suggestions, setSugg] = useState([]);
+  const [suggestions, setSugg] = useState([]);
   
   //per passare all'edit dei dati
   const setCreationMode = () => {
@@ -70,44 +70,44 @@ const url="http://localhost:3001/" + name + "/planner/" + idplanner;
       });
       return response.json();
     };
-  // const userName = "pippo";
+  const userName = "pippo";
 
-  // const getURL = "http://localhost:3001/suggestion/".concat(userName);
+  const getURL = "http://localhost:3001/suggestion/".concat(userName);
 
-  // // CHIAMATA GET
-  // const getSuggestions = async () => {
-  //   const response = await fetch(getURL);
-  //   const elems = await response.json();
-  //   setSugg([...elems]);
-  // };
+  // CHIAMATA GET
+  const getSuggestions = async () => {
+    const response = await fetch(getURL);
+    const elems = await response.json();
+    setSugg([...elems]);
+  };
 
-  // useEffect(() => {
-  //   getSuggestions();
-  // }, []);
+  useEffect(() => {
+    getSuggestions();
+  }, []);
 
-  // // CHIAMATA PATCH
-  // const patchSuggestion = async (url, data) => {
-  //   const response = await fetch(url, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   });
-  //   return response.json();
-  // };
+  // CHIAMATA PATCH
+  const patchSuggestion = async (url, data) => {
+    const response = await fetch(url, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  };
 
-  // // CHIAMATA DELETE
-  // const deleteSuggestion = async (url, data) => {
-  //   const response = await fetch(url, {
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   });
-  //   return response.json();
-  // };
+  // CHIAMATA DELETE
+  const deleteSuggestion = async (url, data) => {
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  };
 
   return (
     <div className="Planner">
@@ -132,7 +132,9 @@ const url="http://localhost:3001/" + name + "/planner/" + idplanner;
         creationMode: false,
         isSaved:true,
       }); patchPlan(url, selectedPlan);}}>Save plan!</button>}
-      {/* <div className="container">
+
+      
+      <div className="container">
         <h2 className="text-important-data">Suggestions saved</h2>
         <div className="list">
           {suggestions.map((e) => {
@@ -172,7 +174,7 @@ const url="http://localhost:3001/" + name + "/planner/" + idplanner;
       </div>
       <Demo />
 
-      <div className="wrapper"></div> */}
+      <div className="wrapper"></div>
     </div>
   );
 }

@@ -11,8 +11,8 @@ export const appointments = [
   },
   {
     title: "Install New Router in Dev Room",
-    startDate: new Date(2018, 6, 23, 14, 30),
-    endDate: new Date(2018, 6, 23, 15, 30),
+    startDate: new Date(2021, 7, 26, 14, 30),
+    endDate: new Date(2021, 7, 26, 15, 30),
   },
   {
     title: "Approve Personal Computer Upgrade Plan",

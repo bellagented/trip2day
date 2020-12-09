@@ -1,28 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function SuggElem(props) {
-
-  const patchURL='http://localhost:3001/suggestion/change';
-  const deleteURL= 'http://localhost:3001/suggestion/delete';
-
-  const patchRequest  = async () => {
-    props.f(patchURL, {id:props.id})
-      .then(await props.u());
-  }
-
-  const deleteRequest  = async () => {
-    props.d(deleteURL, {id:props.id})
-      .then(await props.u());
-  }
+const [show, setShow] = useState(false);
 
   return (
-      <div className='suggestions-info'>
-        <p key={props.id}> {props.from} {props.store}</p>
+      <div className='suggestions-info' onClick={()=>{setShow(!show)}}>
+        <p key={props.id}> {props.suggestion.fromWho} suggested {props.suggestion.name}</p>
+{show? <div className='grid-button'>
 
-        <div className='grid-button'>
-          <button  className='suggestions-button' onClick={patchRequest}>Accept</button>
-          <button  className='suggestions-button' onClick={deleteRequest}>Delete</button>
-        </div>
+<p>category: {props.suggestion.category}</p>
+<p>{props.suggestion.description}</p>
+<p>cost: {props.suggestion.cost}</p>
+<p>time needed: {props.suggestion.timeNeeded}</p>
+          <button  className='suggestions-button' onClick={()=>{props.saveSugg(props.id)}} >add to plan</button>
+        </div>:<div> </div>}
+        
 
       </div>
   )

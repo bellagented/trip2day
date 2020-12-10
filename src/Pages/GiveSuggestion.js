@@ -7,6 +7,7 @@ import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
 import LoadPlace from "./GiveSuggestion Components/LoadPlace";
 
 
+
 export default function GiveSuggestion(props) {
   let { id, towho, forwhere } = useParams();
   const [category, setCategory] = useState("");
@@ -81,14 +82,16 @@ export default function GiveSuggestion(props) {
     <>
  
       <div className="suggestioncontainer">
-        <h2 className="suggestionHeader">
-          Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span>{" "}
-          for <span style={{ color: "#2F7055" }}>{forwhere}</span>
+        <h2 className="suggestionHeader" >
+          Give a suggestion to <span style={{ color: "#22222 " , fontWeight:'600'}}>{towho}</span>{" "}
+          for <span style={{ color: "#22222 " , fontWeight:'600'}}>{forwhere}</span>
         </h2>
+        <div className='sectionSelectBox'>
         <LoadPlace setEvent={setSuggestion} suggestion={myActivity}/>
         <LoadSuggestion suggestion ={suggestion} id={id}/>
+        </div>
         <p>or</p>
-        <section>
+        <section className='formDiv'>
           <form onSubmit={handleSubmit} className="formsuggestion">
             <select
               className="formelement"
@@ -155,10 +158,10 @@ export default function GiveSuggestion(props) {
               required
             />
             <br />
-            <label>
+            <label className='labelAddPhoto'>
               Add a photo:
               <input
-                className="formelement"
+                className='addAPhoto'
                 type="file"
                 name="photo"
                 onChange={handleChange}
@@ -166,7 +169,7 @@ export default function GiveSuggestion(props) {
             </label>
             <br />
 
-            <input className="formelement" type="submit" value="Submit" />
+            <input className="submitButton" type="submit" value="Submit" />
           </form>
         </section>
       </div>

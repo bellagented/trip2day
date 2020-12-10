@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+
 export default function LoadSuggestion(props) {
   const [selectedEvent, setSelectedEvent] = useState({});
   const history = useHistory();
@@ -57,7 +58,9 @@ export default function LoadSuggestion(props) {
             );
           })}
         </select>
-        <input className="formelement" type="submit" value="Submit" />
+      
+        <input className="submitButton1" type="submit" value="Submit" />
+        
       </form>
     </>
   );

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 //import Upload from "./Components/uploadButton.js";
 import ContactForm from "./Planner_components/NewFormOr";
-import Header from "./Planner_components/Header";
 import InfoBar from "./Planner_components/InfoBar";
-import BannerAskSuggestion from "./Planner_components/BannerAskSuggestion";
+
 import "./Planner_components/planner.css";
-import SuggElem from "./Planner_components/SuggElem";
-import SuggElemSaved from "./Planner_components/SuggElemSaved";
+
 import { useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 

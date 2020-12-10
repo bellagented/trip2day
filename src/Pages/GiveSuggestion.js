@@ -5,6 +5,8 @@ import "../styles/GiveSuggestion.css";
 import { useHistory } from "react-router-dom";
 import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
 import LoadPlace from "./GiveSuggestion Components/LoadPlace";
+import { useAuth0 } from "@auth0/auth0-react";
+import UploadImage from "./Option";
 
 
 
@@ -19,6 +21,8 @@ export default function GiveSuggestion(props) {
   const [myActivity, setMyActivity] = useState([]);
   const [suggestion, setSuggestion] = useState({activity:[{activity:'select a place'}]});
   const history = useHistory();
+  const { user } = useAuth0();
+  const { name } = user;
 
   async function getData(url, setValue) {
     let request = await fetch(url);
@@ -27,7 +31,7 @@ export default function GiveSuggestion(props) {
     return response;
   }
   useEffect(() => {
-    getData("http://localhost:3001/mysuggestion", setMyActivity);
+    getData("http://localhost:3001/mysuggestion/" +name, setMyActivity);
   }, []);
 
   const handleChange = (e) => {
@@ -60,16 +64,15 @@ export default function GiveSuggestion(props) {
       body: JSON.stringify(obj),
     });
     const a = await response.json();
-    console.log(a);
     return a;
   }
 
   const handleSubmit = (e) => {
-    sendData(" http://localhost:3001/ReqSuggestion", {
+    sendData(" http://localhost:3001/ReqSuggestion/"+name, {
       id: id,
-      from: "mario",
+      fromWho: name,
       category: category,
-      activity: activity,
+      name: activity,
       cost: cost,
       timeNeeded: timeNeeded,
       description: description,
@@ -160,13 +163,20 @@ export default function GiveSuggestion(props) {
             <br />
             <label className='labelAddPhoto'>
               Add a photo:
+
+              {/* <input
+                className="formelement"
+
               <input
                 className='addAPhoto'
+
                 type="file"
                 name="photo"
                 onChange={handleChange}
-              />
+              /> */}
+
             </label>
+            <UploadImage setPhoto={setPhoto}/>
             <br />
 
             <input className="submitButton" type="submit" value="Submit" />

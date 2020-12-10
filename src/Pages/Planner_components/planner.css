@@ -1,46 +1,55 @@
-input[type="file"] {
+/* input[type="file"] {
     display: none;
-}
+} */
 
-.submit-input{
-    display: none;
+.submit-input {
+  display: none;
 }
 
 .custom-file-upload {
-    background-color:#0ACF83 ;
-    display: block;
-    padding: 6px 12px;
-    cursor: pointer;
-    margin: auto; 
-    width: 20%;
-    text-align: center;
-    border-radius: 40px;
-    font-family: 'Comfortaa', cursive;
+  background-color: #0acf83;
+  display: block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin: auto;
+  width: 20%;
+  text-align: center;
+  border-radius: 40px;
+  font-family: "Comfortaa", cursive;
 }
 
-.info-grid-box{
-    width: 100%;
-    margin: 40px auto;
-    display: grid;
-    border-radius: 30px;
-    font-family: 'Comfortaa', cursive;
-    border-bottom: 30px;
+.info-grid-box {
+  width: 100%;
+  margin: 40px auto;
+  display: grid;
+  border-radius: 30px;
+  font-family: "Comfortaa", cursive;
+  border-bottom: 30px;
 }
 
-.form-box{
-    display: grid;
-    position: relative; 
-    background-color: white;
-    
-    width: 100px;
+.form-box {
+  display: grid;
+  position: relative;
+  background-color: white;
+
+  width: 100px;
 }
 
 .form-input-box {
-    border-radius: 20px;
-    margin: 5px auto;
+  border-radius: 20px;
+  margin: 5px auto;
 }
 
 .bannerSuggestion-grid-box {
+
+  background-color: #a1dbcd;
+  height: 200px;
+  width: 100%;
+  margin: 40px auto;
+  display: grid;
+  border-radius: 30px;
+  font-family: "Comfortaa", cursive;
+
     
     background-color: #b7ebdf;
     height: 200px;
@@ -50,37 +59,34 @@ input[type="file"] {
     border-radius: 30px;
     font-family: 'Comfortaa', cursive;
 
+
 }
 
 .input-request-box {
-    margin: auto;
-    margin-bottom: 20px;
-    display: grid;
-    position: relative;
-    font-size: 1em;
-    background-color: white;
-    height: 60px;
-    border-radius: 20px;
-    border-style: none;
- }
-
-.submit-button-box{
-    background-color:#0ACF83 ;
-    display: block;
-    padding: 6px 12px;
-    cursor: pointer;
-    margin: auto; 
-    width: 60%;
-    display: grid;
-    text-align: center; 
-    border-radius: 30px;
-    font-family: 'Comfortaa', cursive;
-    
+  margin: auto;
+  margin-bottom: 20px;
+  display: grid;
+  position: relative;
+  font-size: 1em;
+  background-color: white;
+  height: 60px;
+  border-radius: 20px;
+  border-style: none;
 }
 
-div{
-    font-family: 'Comfortaa', cursive;
+.submit-button-box {
+  background-color: #0acf83;
+  display: block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin: auto;
+  width: 60%;
+  display: grid;
+  text-align: center;
+  border-radius: 30px;
+  font-family: "Comfortaa", cursive;
 }
 
-
-
+div {
+  font-family: "Comfortaa", cursive;
+}

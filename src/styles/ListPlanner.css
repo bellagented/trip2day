@@ -1,8 +1,39 @@
-.listplannerheader {
-  font-family: "Comfortaa", cursive;
-  padding: 10px;
+.Listplanner-header-grid{
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 50px;
+}
 
-  color: #222222;
+.container-listplanner{
+margin-top: 60px;
+display: grid;
+background-color: #f0f0f0;
+padding: 15px;
+border-radius: 12px;
+height: 400px;
+}
+
+.title-planner{
+display: grid;
+font-weight: 600;
+color:#222222;
+height: 50px;
+border-radius: 6px;
+padding: 5px;
+background-color:#9bf2cf;
+font-size: 1em;
+width: 25%;
+
+}
+
+.title-planner:hover{
+color:#9bf2cf;
+background-color: #222222;
+}
+
+.list-planner{
+  border: 2px solid red;
+  height: 200px;
 }
 
 .plannerlistelement {

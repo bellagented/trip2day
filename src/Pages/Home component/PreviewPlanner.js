@@ -2,6 +2,8 @@ import React from "react";
 import IconPreviewPlanner from "../Components/IconPreviewPlanner";
 import { Link ,useHistory} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+
+
 //banner con preview del planner per la sezione home
 
 export default function PreviewPlanner(props) {
@@ -38,7 +40,6 @@ const id = Math.random().toString(16).substr(8, 10);
   }
 
   return (
-
     <section className="containerPreview-grid">
       <div className="sectiontitle">
         <Link to="/planner ">
@@ -52,14 +53,14 @@ const id = Math.random().toString(16).substr(8, 10);
 
       <div className="contaniterplans">
         <IconPreviewPlanner array={props.planners} path={'/planner/'}/>
-  
+     
         <div className="preview"  onClick={()=>{newPlan();
-          history.push('http://localhost:3001/planner/' + id)}}> 
+          history.push('planner/' + id)}}> 
           <p className="add">+</p>
-          <h3 className="sectionelementtitle">Add planner</h3>
+
+          <h3 className="sectionelementadd">Add planner</h3>
+
         </div>
-
-
       </div>
     </section>
   );

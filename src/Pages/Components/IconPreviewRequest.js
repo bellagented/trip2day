@@ -15,12 +15,13 @@ export default function IconPreview(props) {
   return props.array.map((element) => {
     const style={backgroundImage: "url(" + element.img  + ")"}
     return (
-      <section className="previewrequest-grid">
-      <div key={element.name} className='previewrequest' style={{display:'flex'}} 
+      <section key={element.name} className="previewrequest-grid">
+      <div  className='previewrequest' style={{display:'flex'}} 
         onClick={()=>GoTo(props.path+'/'+element.id+'/'+element.name+'/'+element.where)}>
           
       <div style={style}  className='imgrequestpreview'/>
           <h3 className="sectionelementtitlerequest"> • {element.name} is asking help for { element.where}.</h3>
+          <p>{element.text}</p>
       </div>
       </section>
      

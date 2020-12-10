@@ -1,6 +1,6 @@
 import React from "react";
 import IconPreviewPlanner from "../Components/IconPreviewPlanner";
-import { Link ,useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 
@@ -9,21 +9,20 @@ import { useAuth0 } from "@auth0/auth0-react";
 export default function PreviewPlanner(props) {
   const { user } = useAuth0();
   const { name } = user;
-  const history= useHistory();
+  const history = useHistory();
 
-async function postData(url,data){ 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  return response.json();
-};
-const id = Math.random().toString(16).substr(8, 10);
+  async function postData(url, data) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  }
+  const id = Math.random().toString(16).substr(8, 10);
   function newPlan() {
-   
     const newPlan = {
       where: "",
       id: id,
@@ -36,26 +35,32 @@ const id = Math.random().toString(16).substr(8, 10);
       savedResponse: [],
       myPlan: [],
     };
-    postData("http://localhost:3001/" + name + "/planner/" + id,newPlan);
+    postData("http://localhost:3001/" + name + "/planner/" + id, newPlan);
   }
 
   return (
     <section className="containerPreview-grid">
       <div className="sectiontitle">
         <Link to="/planner ">
-          <h2 className="title" >Your plans</h2>
+          <h2 className="title">Your plans</h2>
         </Link>
         {/* <div className="sectionsubtitle">
           <h3 className="subtitle" >Select a plan to open</h3>
         </div> */}
       </div>
-      
 
       <div className="contaniterplans">
-        <IconPreviewPlanner array={props.planners} path={'/planner/'}/>
-     
-        <div className="preview"  onClick={()=>{newPlan();
-          history.push('planner/' + id)}}> 
+ Oraldopl
+        <IconPreviewPlanner array={props.planners} path={"/planner/"} />
+
+        <div
+          className="preview"
+          onClick={() => {
+            newPlan();
+            history.push("newPlanner/" + id);
+          }}
+        >
+
           <p className="add">+</p>
 
           <h3 className="sectionelementadd">Add planner</h3>

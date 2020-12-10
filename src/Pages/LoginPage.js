@@ -20,8 +20,8 @@ export default function PreviewFriendRequest(props) {
       <img src={Logo} alt="logo" className='logo' />
       <p className='brandQuote'>Let's plan your next adventure!</p>
      
-          <button className='loginButtonFB' onClick={() => loginWithRedirect().then(history.push("/home"))}>Log In with FB</button>
-          <button className='loginButton' onClick={() => loginWithRedirect().then(history.push("/home"))}>Log In or Sign Up</button>
+          <button className='loginButtonFB' onClick={() => history.push("/home")}>Log In with FB</button>
+          <button className='loginButton' onClick={() => history.push("/home")}>Log In or Sign Up</button>
         
         
      

@@ -53,7 +53,7 @@ const id = Math.random().toString(16).substr(8, 10);
               "url(https://cdn2.iconfinder.com/data/icons/50-material-design-round-corner-style/44/Add-512.png)",
           }}
           onClick={()=>{newPlan();
-          history.push('http://localhost:3001/planner/' + id)}}
+          history.push('planner/' + id)}}
         >
           <h3 className="sectionelementtitle">Add planner</h3>
         </div>

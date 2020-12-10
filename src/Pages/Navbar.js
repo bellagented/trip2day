@@ -20,7 +20,7 @@ export default function Navbar(props) {
           <Link className="navlink" to="/home">
             Home
           </Link>
-          <Link className="navlink" to="/planner">
+          <Link className="navlink" to="/listPlanner">
             Planners
           </Link>
           <Link className="navlink" to="/archive">

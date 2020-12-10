@@ -33,7 +33,7 @@ export default function InfoTrip(props) {
       img: img===''? props.defaultValue.img : img,
     });
     props.save();
-    // props.setCreationMode(false);
+    props.setCreationMode(false);
     e.preventDefault();
   };
     return (

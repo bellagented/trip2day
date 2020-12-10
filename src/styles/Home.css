@@ -4,9 +4,24 @@
 margin-left: 5%;
 margin-right: 5%;
 margin-top: 50px;
+
+}
+
+.banner-home{
+width: 100%;
+display: grid;
+grid-template-columns: 1fr;
+}
+
+.img-banner{
+display: grid;
+position: relative;
+width: 100%;
+border-radius: 12px;
 }
 
 .homecontainer{
+margin-top: 60px;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-gap: 15px;
@@ -14,7 +29,7 @@ grid-gap: 15px;
 
 .homecontent-container {
 display: grid;
-height: 280px;
+height: 120px;
 font-family: "Comfortaa", cursive;
 text-decoration: none;
 color:#9bf2cf;
@@ -23,11 +38,12 @@ border-radius: 12px;
 margin-top: -2px;
 padding: 15px;
 font-weight: 500;
+font-size: 1.1em;
 }
 
 h2.homecontent-container-account{
 display: grid;
-height: 280px;
+height: 120px;
 border-radius: 12px;
 margin-top: -2px;
 padding: 15px;
@@ -39,8 +55,8 @@ font-weight: 500;
 }
 
 .preview-info{
-  display: grid;
-  margin-top:50px;
+display: grid;
+margin-top:50px;
 }
 
 /* SECTION PREVIEW PLANS*/
@@ -91,7 +107,7 @@ height: 90%;
 .preview-city{
 display: grid;
 width: 90%;
-height: 90%;
+height: 84.2%;
 border-radius: 12px;
 background-size: cover;
 background-position: center;
@@ -100,7 +116,24 @@ background-color: #222222;
 }
 
 .preview-city:hover {
-  cursor: pointer;
+cursor: pointer;
+opacity: 0.8;
+}
+
+.sectionelementcity{
+width: 90%;
+padding: 5px;
+font-family: "Comfortaa", cursive;
+color: #222222;
+border-radius: 6px;
+font-size: 1em;
+background-color: #9bf2cf 
+}
+
+.sectionelementcity:hover{
+cursor: pointer;
+color:#9bf2cf;
+background-color: #222222;
 }
 
 .preview {
@@ -113,34 +146,32 @@ cursor: pointer;
 
 .add{
 display: grid;
-width: 100%;
-height: 81%;
 align-items: center;
 text-align: center;
 font-size: 18em;
 margin: auto;
 background-color: #9bf2cf ;
 border-radius: 12px;
+
 }
 
-.sectionelementtitle {
-  padding: 5px;
-  width: 90%;
-  font-family: "Comfortaa", cursive;
-  color: #222222;
-  border-radius: 6px;
-  font-size: 1em;
-  background-color: #9bf2cf ;
+.sectionelementadd {
+padding: 5px;
+width: 100%;
+font-family: "Comfortaa", cursive;
+color: #222222;
+border-radius: 6px;
+font-size: 1em;
+background-color: #9bf2cf ;
 }
 
-.sectionelementtitle:hover{
+.sectionelementadd:hover{
 cursor: pointer;
 color:#9bf2cf;
 background-color: #222222;
 }
 
 /* SECTION HELPPREVIEW FRIENDS*/
-
 
 .containerPreview-friends{
 margin-top: 60px;
@@ -149,6 +180,7 @@ background-color: #f0f0f0;
 padding: 15px;
 border-radius: 12px;
 height: 400px;
+margin-bottom: 60px;
 }
 
 .contaniterfriends{
@@ -192,23 +224,4 @@ cursor: pointer;
 
 .sectionelementtitlerequest:hover{
   text-decoration: underline;
-}
-
-/* SECTION PREVIEW FRIENDS*/
-
-.containerPreview-youfriends{
-  border: 2px solid blue;
-  margin-top: 60px;
-  display: grid;
-  border-radius: 12px;
-  background-color: #f0f0f0;
-
-}
-
-
-
-.preview-friend{
-  height: 100%;
-  width: 100%;
-  border: 2px solid red;
 }

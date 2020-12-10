@@ -1,30 +1,38 @@
-import React from "react";
+import React ,{useEffect, useState} from "react";
 import "../styles/ListPlanner.css";
 import Banner from '../styles/banner-planner-1.jpg'
 import  { useHistory } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function ListPlanner() {
   const history = useHistory();
-  let allplans = [
-    {
-      where: "London",
-      fromWhen: "12/10",
-      toWhen: "15/10",
-      img:
-        "https://images.unsplash.com/photo-1473896100090-53523650d4c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80",
-    },
-  ];
+  const [allplans, setAllplans] = useState([]);
+  const { user } = useAuth0();
+  const { name } = user;
+
+  async function getData(url) {
+    let request = await fetch(url);
+    let response = await request.json();
+    return response;
+  }
+  useEffect(() => {
+    getData("http://localhost:3001/"+name+"/").then((data) => {
+
+      setAllplans(data.planner);
+    });
+  }, []);
   const Plannerlist = allplans.map((plan) => {
     return (
       <div className="plannerlistelement"
         key={plan.where}
         style={{ display: "flex" }}
+        onClick={()=>{ history.push('/planner/'+plan.id)}}
       >
         <img src={plan.img} alt="travel"></img>
         <div>
           <h3>{plan.where}</h3>
           <p>
-            {plan.fromWhen} to {plan.toWhen}
+            {plan.fromDate} to {plan.toDate}
           </p>
         </div>
       </div>

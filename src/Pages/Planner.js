@@ -137,6 +137,7 @@ export default function Planner() {
         </div>
       )}
       <BannerAskSuggestion sendrequest={sendrequest} />
+     {/* blocco bottone salvataggio */}
       {isSaved ? (
         "All changes are saved"
       ) : (
@@ -150,12 +151,13 @@ export default function Planner() {
           Save plan!
         </button>
       )}
-
+      {/* blocco bottone salvataggio */}
       <div className="container">
         <h2 className="text-important-data">Suggestions saved</h2>
         <div className="list">
           {plannedAppointments.map((e) => {
-            return (
+           
+           return (
               <SuggElemSaved
                 key={e.id}
                 id={e.id}

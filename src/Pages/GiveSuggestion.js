@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
 import LoadPlace from "./GiveSuggestion Components/LoadPlace";
 import { useAuth0 } from "@auth0/auth0-react";
+import UploadImage from "./Option";
+
 
 export default function GiveSuggestion(props) {
   let { id, towho, forwhere } = useParams();
@@ -158,13 +160,15 @@ export default function GiveSuggestion(props) {
             <br />
             <label>
               Add a photo:
-              <input
+              {/* <input
                 className="formelement"
                 type="file"
                 name="photo"
                 onChange={handleChange}
-              />
+              /> */}
+
             </label>
+            <UploadImage setPhoto={setPhoto}/>
             <br />
 
             <input className="formelement" type="submit" value="Submit" />

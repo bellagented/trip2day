@@ -3,8 +3,8 @@ import { useState } from "react";
 import './planner.css';
 
 export default function InfoTrip(props) {
-  const [city, setCity] = useState(props.defaultValue.city);
-  const [title, setTitle] = useState(props.defaultValue.title);
+  const [city, setCity] = useState('');
+  const [title, setTitle] = useState('');
   const [fromDate, setFromDate] = useState(props.defaultValue.fromDate);
   const [toDate, setToDate] = useState(props.defaultValue.toDate);
 
@@ -24,12 +24,14 @@ export default function InfoTrip(props) {
   };
   const handleSubmit = (e) => {
     props.setData({
-      city: city,
-      title: title,
+      city: city===''? props.defaultValue.city: city,
+      title: title===''? props.defaultValue.title: title,
       fromDate: fromDate,
       toDate: toDate,
-      creationMode: false,
-    })
+      img: props.defaultValue.img,
+    });
+    props.save();
+    props.setCreationMode(false);
     e.preventDefault();
   };
     return (
@@ -52,8 +54,7 @@ export default function InfoTrip(props) {
             type="text"
             value={city}
             onChange={handleChange}
-            placeholder="City to visit"
-            required
+            placeholder={props.defaultValue.city}
             style = {{
                 height: 15,
                 
@@ -67,8 +68,7 @@ export default function InfoTrip(props) {
             type="text"
             value={title}
             onChange={handleChange}
-            placeholder="Give a title to your adventure"
-            required
+            placeholder={props.defaultValue.title}
             
           />
           <br />
@@ -79,7 +79,6 @@ export default function InfoTrip(props) {
             type="date"
             value={fromDate}
             onChange={handleChange}
-            required
           />
           <input
           className='form-input-box'
@@ -87,7 +86,6 @@ export default function InfoTrip(props) {
             type="date"
             value={toDate}
             onChange={handleChange}
-            required
             
           />
           <label className='submit-button-box'>

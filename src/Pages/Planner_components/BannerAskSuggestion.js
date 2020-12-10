@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './planner.css';
 
-export default function BannerAskSuggestion() {
+export default function BannerAskSuggestion(props) {
     const [request, setRequest] = useState("");
 
     const handleChange = (e) => {
@@ -11,7 +11,7 @@ export default function BannerAskSuggestion() {
         }
     };
     const handleSubmit = (e) => {
-        console.log(request);
+        props.sendrequest(request);
         e.preventDefault();
     }
     return (

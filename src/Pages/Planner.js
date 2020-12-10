@@ -16,8 +16,6 @@ const selectedplan = {
   fromDate: "",
   toDate: "",
   img: "",
-  creationMode: true,
-  isSaved: true,
 };
 export default function Planner() {
   const [selectedPlan, setSelectedPlan] = useState(selectedplan);
@@ -28,6 +26,8 @@ export default function Planner() {
   const { name } = user;
   let { idplanner } = useParams();
   const [suggestions, setSugg] = useState([]);
+  const [isSaved, setIsSaved] = useState(true);
+  const [creationMode, setCreationMode] = useState(false);
 
   const url = "http://localhost:3001/" + name + "/planner/" + idplanner;
 
@@ -46,8 +46,6 @@ export default function Planner() {
           fromDate: data.fromDate,
           toDate: data.toDate,
           img: data.img,
-          creationMode: false,
-          isSaved: true,
         });
         setStartingDate(data.fromDate);
         setPlannedAppointments(data.myPlan);
@@ -59,17 +57,6 @@ export default function Planner() {
       });
   }, []);
 
-  //per passare all'edit dei dati
-  const setCreationMode = () => {
-    setSelectedPlan({
-      city: selectedPlan.city,
-      title: selectedPlan.title,
-      fromDate: selectedPlan.fromDate,
-      toDate: selectedPlan.toDate,
-      creationMode: true,
-      isSaved: false,
-    });
-  };
 
   //per salvare i dati
   const patchPlan = async (url, data) => {
@@ -92,49 +79,72 @@ export default function Planner() {
     let savedElement = copySugg[position];
     let copyarray = plannedAppointments.slice();
     copyarray.push(savedElement);
+    setIsSaved(false);
     setPlannedAppointments(copyarray);
   };
 
-  //rimuovre dal piano
+  //rimuovere dal piano
   const refusesuggestion = function (id) {
     const position = plannedAppointments.findIndex((e) => {
       return e.id === id;
     });
     let copyarray = plannedAppointments.slice();
     copyarray.splice(position, 1);
-
+    setIsSaved(false);
     setPlannedAppointments(copyarray);
+  };
+
+  //mandare richiesta sugg
+  async function postReq(url, obj) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+    const a = await response.json();
+    return a;
+  }
+
+  const sendrequest = (text) => {
+    const request = {
+      img: selectedPlan.img,
+      name: name,
+      where: selectedPlan.city,
+      id: idplanner,
+      text:text,
+    };
+    postReq(" http://localhost:3001/AskSuggestion", request);
   };
 
   return (
     <div className="Planner">
-      {selectedPlan.creationMode ? (
+     {isLoaded ? ( <section>
+      {creationMode ? (
         <div>
-          <Header />
-          <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} />
+          <Header defaultimg={selectedPlan.img}/>
+          <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={() => {
+            setIsSaved(true);
+            patchPlan(url, {selectedPlan:selectedPlan,
+            plan: plannedAppointments, suggestion:suggestions});
+          }} />
         </div>
       ) : (
         <div>
           <img src={selectedPlan.img} alt="cityimg" />
-          <InfoBar info={selectedPlan} switch={setCreationMode} />
+          <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
         </div>
       )}
-      <BannerAskSuggestion />
-      {selectedPlan.isSaved ? (
+      <BannerAskSuggestion sendrequest={sendrequest} />
+      {isSaved ? (
         "All changes are saved"
       ) : (
         <button
           onClick={() => {
-            setSelectedPlan({
-              city: selectedPlan.city,
-              title: selectedPlan.title,
-              fromDate: selectedPlan.fromDate,
-              toDate: selectedPlan.toDate,
-              img: selectedPlan.img,
-              creationMode: false,
-              isSaved: true,
-            });
-            patchPlan(url, selectedPlan);
+            setIsSaved(true);
+            patchPlan(url, {selectedPlan:selectedPlan,
+            plan: plannedAppointments, suggestion:suggestions});
           }}
         >
           Save plan!
@@ -149,7 +159,7 @@ export default function Planner() {
               <SuggElemSaved
                 key={e.id}
                 id={e.id}
-               event={e}
+                event={e}
                 refuseSugg={refusesuggestion}
               />
             );
@@ -157,8 +167,8 @@ export default function Planner() {
         </div>
       </div>
 
-      {isLoaded ? (
-        <section>
+     
+       
           <div className="container">
             <h2 className="text-important-data">Suggestions from friends</h2>
             <div className="list">
@@ -169,6 +179,7 @@ export default function Planner() {
                     id={e.id}
                     suggestion={e}
                     saveSugg={savesuggestion}
+
                   />
                 );
               })}

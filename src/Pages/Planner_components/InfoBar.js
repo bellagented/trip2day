@@ -12,7 +12,7 @@ export default function InfoBar(props) {
       <p>
         {fromDate} to {toDate}
       </p>
-      <button onClick={props.switch}>Edit</button>
+      <button onClick={()=>{props.switch(true);props.isSaved(false);}}>Edit</button>
     </section>
   );
 }

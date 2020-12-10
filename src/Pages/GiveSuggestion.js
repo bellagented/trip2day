@@ -5,6 +5,7 @@ import "../styles/GiveSuggestion.css";
 import { useHistory } from "react-router-dom";
 import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
 import LoadPlace from "./GiveSuggestion Components/LoadPlace";
+import UploadImage from "./Option";
 
 
 export default function GiveSuggestion(props) {
@@ -157,13 +158,15 @@ export default function GiveSuggestion(props) {
             <br />
             <label>
               Add a photo:
-              <input
+              {/* <input
                 className="formelement"
                 type="file"
                 name="photo"
                 onChange={handleChange}
-              />
+              /> */}
+
             </label>
+            <UploadImage setPhoto={setPhoto}/>
             <br />
 
             <input className="formelement" type="submit" value="Submit" />

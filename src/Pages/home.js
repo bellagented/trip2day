@@ -3,9 +3,10 @@ import "../styles/Home.css";
 import { useEffect, useState } from "react";
 import PreviewPlanner from "./Home component/PreviewPlanner";
 import PreviewFriendRequest from "./Home component/PreviewFriendRequest";
-import PreviewFriend from "./Home component/PreviewFriend";
-import ArchivePreview from "./Home component/ArchivePreview";
+// import PreviewFriend from "./Home component/PreviewFriend";
+// import ArchivePreview from "./Home component/ArchivePreview";
 import { useAuth0 } from "@auth0/auth0-react";
+import Banner from '../styles/banner-home-2.jpg'
 
 export default function Home() {
   const [data, setData] = useState({});
@@ -54,7 +55,15 @@ export default function Home() {
   }, []);
 
   return (
+
+    
+
     <div className='home-header-grid'>
+
+      <div className="banner-home">
+        <img src={Banner} alt="logo" className='img-banner' />
+      </div>
+
       <header className='homecontainer'>
         <h2 className='homecontent-container' >Lorem ipsum  <br /> dolor sit amet consectetur elit.</h2>
         <h2 className='homecontent-container-account'> Welcome {name} </h2>
@@ -63,8 +72,8 @@ export default function Home() {
       <section className='preview-info'>
         <PreviewPlanner planners={planners} />
         <PreviewFriendRequest />
-        <PreviewFriend friendList={friendList} />
-        <ArchivePreview />
+        {/* <PreviewFriend friendList={friendList} />
+        <ArchivePreview /> */}
       </section>
     </div>
   );

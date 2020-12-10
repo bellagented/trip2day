@@ -17,9 +17,13 @@ export default function IconPreview(props) {
     const style={backgroundImage: "url(" + element.img  + ")"};
     const path = props.path + element.name;
     return (
-      <div key={element.name} className='preview' style={style} onClick={()=>GoTo(path)}>
+
+      <section className="preview-grid">
+        <div key={element.name} className='preview-friend-online' style={style} onClick={()=>GoTo(path)}>
         <h3 className="sectionelementtitle">{element.name}</h3>
-      </div>
+        </div>
+        
+      </section>
     );
   });
 }

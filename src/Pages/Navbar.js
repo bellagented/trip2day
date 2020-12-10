@@ -23,9 +23,9 @@ export default function Navbar(props) {
           <Link className="navlink" to="/listPlanner">
             Planners
           </Link>
-          <Link className="navlink" to="/archive">
+          {/* <Link className="navlink" to="/archive">
             Archives
-          </Link>
+          </Link> */}
           <LogoutButton />
         </div>
       </div>

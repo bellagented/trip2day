@@ -120,10 +120,10 @@ export default function Planner() {
 
   return (
     <div className="Planner">
-     {isLoaded ? ( <section>
+    {isLoaded ? ( <section>
       {creationMode ? (
         <div>
-          <Header defaultimg={selectedPlan.img}/>
+          {/* <Header defaultimg={selectedPlan.img}/> */}
           <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={() => {
             setIsSaved(true);
             patchPlan(url, {selectedPlan:selectedPlan,
@@ -133,6 +133,7 @@ export default function Planner() {
       ) : (
         <div>
           <img src={selectedPlan.img} alt="cityimg" />
+      <p>{selectedPlan.img}</p>
           <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
         </div>
       )}

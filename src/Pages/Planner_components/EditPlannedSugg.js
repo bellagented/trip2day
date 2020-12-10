@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
+import UploadImage from '../Option';
 export default function EditPlannedSugg (props){
     const [category, setCategory] = useState("");
     const [cost, setCost] = useState("");
@@ -130,7 +131,7 @@ return(
               /> */}
 
             </label>
-            {/* <UploadImage setPhoto={setPhoto}/> */}
+            <UploadImage setPhoto={setPhoto}/>
             <br />
 
             <input className="formelement" type="submit" value="Set change" />

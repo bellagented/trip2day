@@ -9,9 +9,11 @@ export default function UploadImage(props) {
   const el = useRef();
 
   const handleChange = (e) => {
-    const file = e.target.files[0];
-    console.log(file);
-    setFile(file);
+    if(e.target.name === "photo") {
+      const file = e.target.files[0];
+      console.log(file);
+      setFile(file);
+    }
   }
 
   const uploadFile = () => {
@@ -31,14 +33,14 @@ export default function UploadImage(props) {
   return (
     <div>
       <div className="file-upload">
-        <input type="file" ref={el} onChange={handleChange} />
+        <input type="file" ref={el} onChange={handleChange} name="photo" />
         <button onClick={uploadFile} className="upbutton">
           Upload
         </button>
             <hr />
         {/* displaying received image*/}
         {/* <div><textarea value={data.path} onChange={uploadFile} /></div> */}
-        {data.path && <img src={data.path} alt={data.name} style={{width: 700}}/>}
+        {data.path && <img src={data.path} alt={data.name} style={{width: 300}}/>}
         {console.log(data)}
       </div>
   </div>

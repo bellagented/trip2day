@@ -50,7 +50,7 @@ export default function PreviewPlanner(props) {
       </div>
 
       <div className="contaniterplans">
- Oraldopl
+
         <IconPreviewPlanner array={props.planners} path={"/planner/"} />
 
         <div

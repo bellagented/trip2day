@@ -40,7 +40,6 @@ const id = Math.random().toString(16).substr(8, 10);
   }
 
   return (
-
     <section className="containerPreview-grid">
       <div className="sectiontitle">
         <Link to="/planner ">
@@ -56,12 +55,12 @@ const id = Math.random().toString(16).substr(8, 10);
         <IconPreviewPlanner array={props.planners} path={'/planner/idplanner'}/>
      
         <div className="preview"  onClick={()=>{newPlan();
-          history.push('http://localhost:3001/planner/' + id)}}> 
+          history.push('planner/' + id)}}> 
           <p className="add">+</p>
+
           <h3 className="sectionelementadd">Add planner</h3>
+
         </div>
-
-
       </div>
     </section>
   );

@@ -161,6 +161,12 @@ export default function Planner() {
                 id={e.id}
                 event={e}
                 refuseSugg={refusesuggestion}
+                edit={setPlannedAppointments}
+                planned={plannedAppointments}
+                save={() => {
+            setIsSaved(true);
+            patchPlan(url, {selectedPlan:selectedPlan,
+            plan: plannedAppointments, suggestion:suggestions});}}
               />
             );
           })}

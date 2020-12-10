@@ -110,7 +110,6 @@ export default function NewPlanner() {
     <div className="Planner">
       {selectedPlan.creationMode ? (
         <div>
-          <Header />
           <ContactForm setData={setSelectedPlan} defaultValue={selectedPlan} />
         </div>
       ) : (
@@ -119,9 +118,8 @@ export default function NewPlanner() {
           <InfoBar info={selectedPlan} switch={setCreationMode} />
         </div>
       )}
-      <BannerAskSuggestion />
       {selectedPlan.isSaved ? (
-        "All changes are saved"
+        ""
       ) : (
         <button
           onClick={() => {
@@ -140,46 +138,6 @@ export default function NewPlanner() {
           Save plan!
         </button>
       )}
-
-      <div className="container">
-        <h2 className="text-important-data">Suggestions saved</h2>
-        <div className="list">
-          {plannedAppointments.map((e) => {
-            return (
-              <SuggElemSaved
-                key={e.id}
-                id={e.id}
-                event={e}
-                refuseSugg={refusesuggestion}
-              />
-            );
-          })}
-        </div>
-      </div>
-
-      {isLoaded ? (
-        <section>
-          <div className="container">
-            <h2 className="text-important-data">Suggestions from friends</h2>
-            <div className="list">
-              {suggestions.map((e) => {
-                return (
-                  <SuggElem
-                    key={e.id}
-                    id={e.id}
-                    suggestion={e}
-                    saveSugg={savesuggestion}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      ) : (
-        <div></div>
-      )}
-
-      <div className="wrapper"></div>
     </div>
   );
 }

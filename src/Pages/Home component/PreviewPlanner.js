@@ -52,8 +52,6 @@ const id = Math.random().toString(16).substr(8, 10);
 
       <div className="contaniterplans">
         <IconPreviewPlanner array={props.planners} path={'/planner/'}/>
-        <IconPreviewPlanner array={props.planners} path={'/planner/'}/>
-        <IconPreviewPlanner array={props.planners} path={'/planner/'}/>
   
         <div className="preview"  onClick={()=>{newPlan();
           history.push('http://localhost:3001/planner/' + id)}}> 

@@ -6,7 +6,7 @@ import GiveSuggestion from "./Pages/GiveSuggestion";
 import Option from "./Pages/Option";
 import ListPlanner from "./Pages/ListPlanner";
 import Planner from "./Pages/Planner";
-import NewPlanner from "./Pages/newPlannerOR";
+import NewPlanner from "./Pages/NewFormOr";
 import ListArchive from "./Pages/ListArchive";
 import Archive from "./Pages/Archive";
 import FriendList from "./Pages/FriendList";

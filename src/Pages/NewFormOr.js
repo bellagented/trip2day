@@ -1,12 +1,29 @@
 import React from "react";
 import { useState } from "react";
+import {  useHistory } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
-import { withRouter } from "react-router-dom"; // <--- import `withRouter`. We will use this in the bottom of our file.
-function ContactForm(props) {
-  const [city, setCity] = useState(props.defaultValue.city);
-  const [title, setTitle] = useState(props.defaultValue.title);
-  const [fromDate, setFromDate] = useState(props.defaultValue.fromDate);
-  const [toDate, setToDate] = useState(props.defaultValue.toDate);
+
+export default function ContactForm(props) {
+  const [city, setCity] = useState('');
+  const [title, setTitle] = useState('');
+  const [fromDate, setFromDate] = useState('');
+  const [toDate, setToDate] = useState('');
+  const id = Math.random().toString(16).substr(8, 10);
+  const history = useHistory();
+  const { user } = useAuth0();
+  const { name } = user;
+  async function postData(url, data) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  }
+  
 
   const handleChange = (e) => {
     if (e.target.name === "city") {
@@ -22,16 +39,23 @@ function ContactForm(props) {
       setToDate(e.target.value);
     }
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.history.push("/home");
-    props.setData({
-      city: city,
-      title: title,
+
+  function newPlan() {
+    const newPlan = {
+      where: city,
+      id: id,
+      title:title,
+      img: "",
       fromDate: fromDate,
       toDate: toDate,
-      creationMode: false,
-    });
+      suggestion: [],
+      myPlan: [],
+    };
+    postData("http://localhost:3001/" + name + "/planner/" + id, newPlan).then(()=>{history.push("/planner/"+id)});
+  }
+
+  const handleSubmit = (e) => {
+   newPlan();
     e.preventDefault();
   };
 
@@ -102,4 +126,3 @@ function ContactForm(props) {
   );
 }
 
-export default withRouter(ContactForm);

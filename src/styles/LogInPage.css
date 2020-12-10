@@ -20,7 +20,7 @@
   background:rgba(255, 255, 255, 0.742);
   position: relative;
   margin: 200px auto;
-  height: 300px;
+  height: 350px;
   width: 500px;
   border-radius: 20px;
   text-align: center;
@@ -44,7 +44,7 @@
   font-size: 16px;
   cursor: pointer;
   display: grid;
-  margin:10px 5px  auto;
+  margin:0px auto 0px auto;
 }
 
 .loginButtonFB:hover{
@@ -53,7 +53,7 @@
 }
 
 .loginButton {
-  background-color:#9BF2CF;
+  background-color:#75D8A2;
   font-family: comfortaa, cursive;
   border-radius: 10px;
   border: none;
@@ -64,12 +64,12 @@
   font-size: 16px;
   cursor: pointer;
   display: grid;
-  margin:10px 5px  auto;
+  margin:0px auto 10px  auto;
 }
 
 .loginButton:hover{
-  background-color: #75D8A2;
-  transition: 0.2s;
+  background-color: #2F7055;
+  transition: 0.3s;
 }
 
 

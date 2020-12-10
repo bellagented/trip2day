@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
 
 export default function LoadSuggestion(props) {
   const [selectedEvent, setSelectedEvent] = useState({});
   const history = useHistory();
+  const { user } = useAuth0();
+  const { name } = user;
 
   async function sendData(url, obj) {
     const response = await fetch(url, {
@@ -30,9 +35,9 @@ export default function LoadSuggestion(props) {
     e.preventDefault();
      sendData(" http://localhost:3001/ReqSuggestion", {
       id: props.id,
-      from: "mario",
+      fromWho: name,
       category: selectedEvent.category,
-      activity: selectedEvent.activity,
+      activity: selectedEvent.name,
       cost: selectedEvent.cost,
       timeNeeded: selectedEvent.timeNeeded,
       description: selectedEvent.description,
@@ -51,13 +56,15 @@ export default function LoadSuggestion(props) {
           <option>-select activity</option>
           {props.suggestion.activity.map((mysuggestion) => {
             return (
-              <option key={mysuggestion.activity}>
-                {mysuggestion.activity}
+              <option key={mysuggestion.name}>
+                {mysuggestion.name}
               </option>
             );
           })}
         </select>
-        <input className="formelement" type="submit" value="Submit" />
+      
+        <input className="submitButton1" type="submit" value="Submit" />
+        
       </form>
     </>
   );

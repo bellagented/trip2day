@@ -2,6 +2,8 @@ import React from "react";
 import IconPreviewPlanner from "../Components/IconPreviewPlanner";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+
+
 //banner con preview del planner per la sezione home
 
 export default function PreviewPlanner(props) {
@@ -48,6 +50,7 @@ export default function PreviewPlanner(props) {
       </div>
 
       <div className="contaniterplans">
+ Oraldopl
         <IconPreviewPlanner array={props.planners} path={"/planner/"} />
 
         <div
@@ -57,9 +60,11 @@ export default function PreviewPlanner(props) {
             history.push("newPlanner/" + id);
           }}
         >
+
           <p className="add">+</p>
 
-          <h3 className="sectionelementtitle">Add planner</h3>
+          <h3 className="sectionelementadd">Add planner</h3>
+
         </div>
       </div>
     </section>

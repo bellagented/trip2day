@@ -1,29 +1,105 @@
 .suggestioncontainer {
-  background-color: #9bf2cf;
+  background-color: #f0f0f0;
   border-radius: 20px;
   margin: 10px;
   padding: 20px;
+  display:block;
 }
 
 .suggestionHeader {
   font-family: "Comfortaa", cursive;
+  font-weight: 400;
   color: #222222;
+  display:block;
+}
+/* Section Select from your archive  */
+.sectionSelectBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.submitButton1{
+  background-color: #75D8A2;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  margin: 10px;
+ 
+}
+
+.submitButton1:hover{
+  background-color:#2F7055;
+  transition: 0,3s;
 }
 
 .formsuggestion {
   font-family: "Comfortaa", cursive;
   color: #222222;
+  display: inline-block;
 }
 
 .formelement{
     border-radius: 10px;
-    margin: 5px;
+    margin: 8px;
     font-family: "Comfortaa", cursive;
     padding: 5px;
+    border:none;
+    display: inline-block;
+}
+
+.addAPhoto{
+  margin:10px !important;
+}
+
+.labelAddPhoto{
+  margin:10px;
+  padding: 15px 32px;
+  color: white;
+  font-family: 'Comfortaa', cursive;
+  background-color:#75D8A2 ;
+  padding: 4px;
+}
+
+.labelAddPhoto:hover{
+  transition: 0,3s;
+  background-color:#2F7055 ;
+  
 }
 
 .descriptionsuggestion{
     text-align: left;
     height: 15em;
     width: 25em;
+    margin-bottom: 30px;
 }
+
+.submitButton{
+  background-color: #75D8A2;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  margin: 40px auto;
+}
+
+.submitButton:hover{
+  background-color:#2F7055;
+  transition: 0,3s;
+}
+
+
+

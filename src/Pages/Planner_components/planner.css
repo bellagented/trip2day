@@ -41,6 +41,7 @@
 }
 
 .bannerSuggestion-grid-box {
+
   background-color: #a1dbcd;
   height: 200px;
   width: 100%;
@@ -48,6 +49,17 @@
   display: grid;
   border-radius: 30px;
   font-family: "Comfortaa", cursive;
+
+    
+    background-color: #b7ebdf;
+    height: 200px;
+    width: 100%;
+    margin: 40px auto;
+    display: grid;
+    border-radius: 30px;
+    font-family: 'Comfortaa', cursive;
+
+
 }
 
 .input-request-box {

@@ -55,9 +55,9 @@ const savechange=(obj)=>{
           description: description===''? defaultValue.description:description,
           photo: photo,
         });
-       setTimeout(() => {
+       
         props.save();
-       }, 500); 
+       
        savealert();
         e.preventDefault();
       };

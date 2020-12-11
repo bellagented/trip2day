@@ -140,7 +140,7 @@ const saveAll=()=>{
       ) : (
         <div>
           <img src={selectedPlan.img} alt="cityimg" />
-      <p>{selectedPlan.img}</p>
+
           <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
         </div>
       )}
@@ -149,11 +149,11 @@ const saveAll=()=>{
       {/* {isSaved ? (
         "All changes are saved"
       ) : ( */}
-        <button
+        {/* <button
           onClick={saveAll}
         >
           Save plan!
-        </button>
+        </button> */}
       {/* )} */}
       {/* blocco bottone salvataggio */}
       <div className="container">

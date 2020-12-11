@@ -6,7 +6,7 @@ import GiveSuggestion from "./Pages/GiveSuggestion";
 import Option from "./Pages/Option";
 import ListPlanner from "./Pages/ListPlanner";
 import Planner from "./Pages/Planner";
-import NewPlanner from "./Pages/newPlannerOR";
+import NewPlanner from "./Pages/NewFormOr";
 import ListArchive from "./Pages/ListArchive";
 import Archive from "./Pages/Archive";
 import FriendList from "./Pages/FriendList";
@@ -34,7 +34,7 @@ function App() {
         <PrivateRoute path="/option" component={Option} />
         <PrivateRoute path="/newPlanner" component={NewPlanner} />
         <PrivateRoute path="/planner/:idplanner" component={Planner} />
-        <PrivateRoute path="/planner" component={ListPlanner} />
+        <PrivateRoute path="/listPlanner" component={ListPlanner} />
         <PrivateRoute path="/archive/:idarchive" component={Archive} />
         <PrivateRoute path="/archive" component={ListArchive} />
         <PrivateRoute path="/friendlist" component={FriendList} />

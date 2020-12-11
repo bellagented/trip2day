@@ -28,6 +28,7 @@ export default function Planner() {
   const [suggestions, setSugg] = useState([]);
   const [isSaved, setIsSaved] = useState(true);
   const [creationMode, setCreationMode] = useState(false);
+  const [obj,setObj]=useState({});
 
   const url = "http://localhost:3001/" + name + "/planner/" + idplanner;
 
@@ -107,6 +108,11 @@ export default function Planner() {
     return a;
   }
 
+useEffect(() => {
+  saveAll();
+  
+}, [selectedPlan,plannedAppointments,suggestions]);
+
   const sendrequest = (text) => {
     const request = {
       img: selectedPlan.img,
@@ -117,40 +123,38 @@ export default function Planner() {
     };
     postReq(" http://localhost:3001/AskSuggestion", request);
   };
+const saveAll=()=>{
+  // setIsSaved(true);
 
+  patchPlan(url,{selectedPlan:selectedPlan,
+    plan: plannedAppointments, suggestion:suggestions});
+};
   return (
     <div className="Planner">
-     {isLoaded ? ( <section>
+    {isLoaded ? ( <section>
       {creationMode ? (
         <div>
-          <Header defaultimg={selectedPlan.img}/>
-          <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={() => {
-            setIsSaved(true);
-            patchPlan(url, {selectedPlan:selectedPlan,
-            plan: plannedAppointments, suggestion:suggestions});
-          }} />
+          {/* <Header defaultimg={selectedPlan.img}/> */}
+          <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={saveAll} />
         </div>
       ) : (
         <div>
           <img src={selectedPlan.img} alt="cityimg" />
+      <p>{selectedPlan.img}</p>
           <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
         </div>
       )}
       <BannerAskSuggestion sendrequest={sendrequest} />
      {/* blocco bottone salvataggio */}
-      {isSaved ? (
+      {/* {isSaved ? (
         "All changes are saved"
-      ) : (
+      ) : ( */}
         <button
-          onClick={() => {
-            setIsSaved(true);
-            patchPlan(url, {selectedPlan:selectedPlan,
-            plan: plannedAppointments, suggestion:suggestions});
-          }}
+          onClick={saveAll}
         >
           Save plan!
         </button>
-      )}
+      {/* )} */}
       {/* blocco bottone salvataggio */}
       <div className="container">
         <h2 className="text-important-data">Suggestions saved</h2>
@@ -163,6 +167,9 @@ export default function Planner() {
                 id={e.id}
                 event={e}
                 refuseSugg={refusesuggestion}
+                edit={setPlannedAppointments}
+                planned={plannedAppointments}
+                save={saveAll}
               />
             );
           })}

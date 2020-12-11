@@ -4,33 +4,32 @@ import axios from "axios";
 
 export default function UploadImage(props) {
 
-  const [file, setFile] = useState("");
+
   const [data, getFile] = useState({name: "", path: ""});
   const el = useRef();
 
   const handleChange = (e) => {
-    const file = e.target.files[0];
-    console.log(file);
-    setFile(file);
+
+    if(e.target.name==='file'){const formData = new FormData();
+      formData.append("file",  e.target.files[0]);
+      axios.post("http://localhost:3001/upload", formData)
+      .then(res => {
+        props.setPhoto("http://localhost:3001" + res.data.path);
+        getFile({
+          name: res.data.name,
+          path: "http://localhost:3001" + res.data.path
+        })
+
+      })
+      .catch(err => console.log(err));}
   }
 
-  const uploadFile = () => {
-    const formData = new FormData();
-    formData.append("file", file);
-    axios.post("http://localhost:3001/upload", formData)
-    .then(res => {
-      console.log(res);
-      getFile({
-        name: res.data.name,
-        path: "http://localhost:3001" + res.data.path
-      })
-    }).then(() => {props.setPhoto(data.path)})
-    .catch(err => console.log(err))
-  }
+  
 
   return (
     <div>
       <div className="file-upload">
+ LauraCss
         <label className='labelBrowseFile'>
           Browse
         <input style={{display:'none'}} className='inputFile' type="file" ref={el} onChange={handleChange} />
@@ -39,10 +38,12 @@ export default function UploadImage(props) {
           Upload
         </button>
             
+
+       
+
         {/* displaying received image*/}
         {/* <div><textarea value={data.path} onChange={uploadFile} /></div> */}
-        {data.path && <img src={data.path} alt={data.name} style={{width: 700}}/>}
-        {console.log(data)}
+        {data.path && <img src={data.path} alt={data.name} style={{width: 300}}/>}
       </div>
   </div>
   );

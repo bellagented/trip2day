@@ -59,8 +59,6 @@ export default function ListPlanner() {
     </div>
   </section>
 
-</section>
-
       
       <div className="plannerlistelement" style={{ display: "flex" }}>
         <img

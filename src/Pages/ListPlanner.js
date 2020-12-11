@@ -54,6 +54,7 @@ export default function ListPlanner() {
         <div className="planner-travel-grid">
           <div className="planner-travel">{Plannerlist}</div>
           <div className="planner-travel">
+ 
             <div className="plannerlistelement" style={{ display: "flex" }}>
               <img
                 className="lethPhoto"
@@ -71,6 +72,7 @@ export default function ListPlanner() {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>

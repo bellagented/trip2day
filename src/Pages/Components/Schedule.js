@@ -18,8 +18,6 @@ import {
   ConfirmationDialog,
 } from "@devexpress/dx-react-scheduler-material-ui";
 
-import { getCurrentDate } from "./utils";
-
 export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -79,9 +77,6 @@ export default class Demo extends React.PureComponent {
     });
   }
 
-
-  
-
   render() {
     const {
       currentDate,
@@ -94,7 +89,6 @@ export default class Demo extends React.PureComponent {
 
     return (
       <Paper>
-      
         <Scheduler data={data} height={660}>
           <ViewState
             currentDate={currentDate}
@@ -121,7 +115,7 @@ export default class Demo extends React.PureComponent {
           <Toolbar />
           <ViewSwitcher />
           <DateNavigator />
-         <TodayButton />
+          <TodayButton />
           <Appointments />
           <AppointmentTooltip showOpenButton showDeleteButton />
           <AppointmentForm />

@@ -77,7 +77,7 @@ export default function GiveSuggestion(props) {
       cost: cost,
       timeNeeded: timeNeeded,
       description: description,
-      photo: photo,
+      photoUrl: photo,
     }).then(() => history.push("/home"));
     e.preventDefault();
   };

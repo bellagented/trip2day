@@ -55,9 +55,9 @@ const savechange=(obj)=>{
           description: description===''? defaultValue.description:description,
           photo: photo,
         });
-       setTimeout(() => {
+       
         props.save();
-       }, 500); 
+       
        savealert();
         e.preventDefault();
       };
@@ -65,7 +65,7 @@ const savechange=(obj)=>{
 
 return(
 
-    <div>
+    <div className="form-suggestions-saved">
          <form onSubmit={handleSubmit} className="formsuggestion">
             <select
               className="formelement"
@@ -81,7 +81,7 @@ return(
                 Beach/Mountain/Nature
               </option>
               <option value="Activity/Tour">Activity/Tour</option>
-              <option value="Instagram Spot">Activity/Tour</option>
+              <option value="Instagram Spot">Instagram Spot</option>
             </select>
 
             

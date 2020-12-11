@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../styles/Navbar.css";
 import LogoutButton from "./Components/LogoutButton";
-import Logo from '../img/logo.png'
 
 export default function Navbar(props) {
   const history = useHistory();
@@ -13,7 +12,7 @@ export default function Navbar(props) {
         <div className="logo-navbar">
           {/* <img className="logo-navbar" src={img}></img> */}
           <Link className="logo-navbar" to="/home">
-          <img src={Logo} alt="logo" className='img' />
+            <h1 className="logo-navbar">Trip2Day</h1>
           </Link>
         </div>
 

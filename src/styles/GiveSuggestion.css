@@ -50,16 +50,15 @@
 }
 
 .submitButton1{
-  background-color: #9BF2CF;
+  background-color: #75D8A2;
   font-family: comfortaa, cursive;
-  border-radius: 6px;
-  color: #222222;
-  font-weight: 600;
-  font-size: 1em;
+  border-radius: 10px;
   border: none;
+  color: white;
   padding: 10px;
   text-align: center;
   text-decoration: none;
+  font-size: 16px;
   cursor: pointer;
   display: grid;
   margin: 10px auto;
@@ -67,8 +66,7 @@
 }
 
 .submitButton1:hover{
-  background-color:#222222;
-  color: #E4E4E4;
+  background-color:#2F7055;
   transition: 0,3s;
 }
 
@@ -164,48 +162,61 @@
 
 
 .labelBrowseFile{
-  background-color: #9BF2CF;
+  background-color: #75D8A2;
   font-family: comfortaa, cursive;
-  border-radius: 6px;
-  color: #222222;
-  font-weight: 600;
-  font-size: 1em;
-  font-family: comfortaa, cursive;
-  border: none;  
+  border-radius: 10px;
+  border: none;
+  color: white;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
+  font-size: 16px;
   cursor: pointer;
   margin: 10px;
 }
 
 .labelBrowseFile:hover{
-  background-color:#222222;
-  color: #e4e4e4;
+  background-color:#2F7055;
   transition: 0,3s;
 }
 
 
 
-.submitButton{
-  background-color: #9BF2CF;
+.upbutton{
+  background-color: #75D8A2;
   font-family: comfortaa, cursive;
-  border-radius: 6px;
-  color: #222222;
-  font-weight: 600;
-  font-size: 1em;
-  font-family: comfortaa, cursive;
+  border-radius: 10px;
   border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.upbutton:hover{
+  background-color:#2F7055;
+  transition: 0,3s;
+}
+
+.submitButton{
+  background-color: #75D8A2;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
+  font-size: 16px;
   cursor: pointer;
   display: grid;
   margin: 40px auto;
 }
 
 .submitButton:hover{
-  background-color:#222222;
-  color: #e4e4e4;
+  background-color:#2F7055;
   transition: 0,3s;
 }

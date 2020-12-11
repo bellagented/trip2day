@@ -3,7 +3,6 @@ import "../styles/ListPlanner.css";
 import Banner from '../styles/banner-planner-1.jpg'
 import  { useHistory } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
-import Footer from './Footer'
 
 export default function ListPlanner() {
   const history = useHistory();
@@ -41,13 +40,6 @@ export default function ListPlanner() {
   });
   return (
 
-    <div>
-    <section className="Listplanner-header-grid">
-      <div className="banner-home">
-        <img src={Banner} alt="logo" className='img-banner' />
-      </div>
-
-
 <section className="Listplanner-header-grid">
   <div className="banner-home">
     <img src={Banner} alt="logo" className='img-banner' />
@@ -79,14 +71,7 @@ export default function ListPlanner() {
           <p>Click here to start organizing your next big adventure</p>
         </div>
       </div>
-
-      
-    </section>
-    <Footer/>
-    </div>
-    
-
-
+</section>
   );
 }
 

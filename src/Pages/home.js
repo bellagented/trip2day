@@ -3,7 +3,6 @@ import "../styles/Home.css";
 import { useEffect, useState } from "react";
 import PreviewPlanner from "./Home component/PreviewPlanner";
 import PreviewFriendRequest from "./Home component/PreviewFriendRequest";
-import Footer from './Footer'
 // import PreviewFriend from "./Home component/PreviewFriend";
 // import ArchivePreview from "./Home component/ArchivePreview";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -58,7 +57,7 @@ export default function Home() {
   return (
 
     
-   <div>
+
     <div className='home-header-grid'>
 
       <div className="banner-home">
@@ -76,9 +75,6 @@ export default function Home() {
         {/* <PreviewFriend friendList={friendList} />
         <ArchivePreview /> */}
       </section>
-      
-    </div>
-    <Footer/>
     </div>
   );
   }

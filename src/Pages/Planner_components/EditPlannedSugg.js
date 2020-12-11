@@ -65,7 +65,7 @@ const savechange=(obj)=>{
 
 return(
 
-    <div>
+    <div className="form-suggestions-saved">
          <form onSubmit={handleSubmit} className="formsuggestion">
             <select
               className="formelement"

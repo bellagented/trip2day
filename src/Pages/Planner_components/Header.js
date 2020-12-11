@@ -1,3 +1,4 @@
+import { colors } from "@material-ui/core";
 import React from "react";
 import "./planner.css";
 
@@ -29,6 +30,7 @@ export default function Header() {
           height: 320,
           margin: "0 auto",
           border: "1px dashed #a2a2a2",
+          border: solidblue,
         }}
         onClick={() => imageUploader.current.click()}
       >

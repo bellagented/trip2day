@@ -15,27 +15,27 @@ export default function BannerAskSuggestion(props) {
         e.preventDefault();
     }
     return (
-        <section className = 'bannerSuggestion-grid-box'>
-          <form onSubmit={handleSubmit}
-          style={{
-            margin: 'auto',
-            width: '20%'
-        }}>
-          <input
+
+    <section className='bannerSuggestion'>
+
+      <form className="bannerSuggestion-grid-box" onSubmit={handleSubmit}>
+        <div>
+        <input className='input-request-box'
             name="request"
             type="textarea"
             value={request}
             onChange={handleChange}
-            placeholder="Type here your request"
+            placeholder="Type here your request" className="input-request-text"
             required
-            className='input-request-box'
           />
-          <label className='submit-button-box'>
-              Send
-           <input type="submit" value="Submit" style={{ display: "none"}}/>
+        </div>
+        <div>
+        <label className='submit-button-box'>Send
+          <input type="submit" value="Submit" style={{ display: "none"}}/>
+        </label>
+        </div>
+      </form>
 
-           </label>
-          </form>
-        </section>
+    </section>
     )
 }

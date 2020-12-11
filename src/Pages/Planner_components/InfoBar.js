@@ -6,13 +6,15 @@ export default function InfoBar(props) {
   const { city, title, fromDate, toDate } = props.info;
   return (
     <section>
-      <h1>{title}</h1>
-      <h3>{city}</h3>
+      
+        <h2 className="title-travel">{title}</h2>
 
-      <p>
-        {fromDate} to {toDate}
-      </p>
-      <button onClick={()=>{props.switch(true);props.isSaved(false);}}>Edit</button>
+      <div className="info-travel">
+        <h3 className="city-travel">{city}</h3>
+         <p className="date-city">{fromDate} to {toDate}</p>
+      </div>
+
+      <button className="button-city" onClick={()=>{props.switch(true);props.isSaved(false);}}>Edit</button>
     </section>
   );
 }

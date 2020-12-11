@@ -8,6 +8,7 @@ import LoadPlace from "./GiveSuggestion Components/LoadPlace";
 import { useAuth0 } from "@auth0/auth0-react";
 import UploadImage from "./Option";
 import Banner from '../styles/banner-home-2.jpg'
+import Footer from './Footer'
 
 
 
@@ -77,12 +78,13 @@ export default function GiveSuggestion(props) {
       cost: cost,
       timeNeeded: timeNeeded,
       description: description,
-      photo: photo,
+      photoUrl: photo,
     }).then(() => history.push("/home"));
     e.preventDefault();
   };
 
   return (
+    <>
     <div className='body'>
     <div className="banner-home">
     <img src={Banner} alt="logo" className='img-banner' />
@@ -120,7 +122,7 @@ export default function GiveSuggestion(props) {
                 Beach/Mountain/Nature
               </option>
               <option value="Activity/Tour">Activity/Tour</option>
-              <option value="Instagram Spot">Activity/Tour</option>
+              <option value="Instagram Spot">Instagram Spot</option>
             </select>
             
             
@@ -180,7 +182,9 @@ export default function GiveSuggestion(props) {
           </form>
           </section>
       </div>
+      
       </div>
-    
+      <Footer/>
+    </>
   );
 }

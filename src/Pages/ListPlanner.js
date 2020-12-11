@@ -40,32 +40,21 @@ export default function ListPlanner() {
     );
   });
   return (
-
     <div>
     <section className="Listplanner-header-grid">
       <div className="banner-home">
         <img src={Banner} alt="logo" className='img-banner' />
       </div>
 
+      <div className="container-listplanner">
+        <h2 className="title-planner">Wewe, Lorem ipsum</h2>
 
-<section className="Listplanner-header-grid">
-  <div className="banner-home">
-    <img src={Banner} alt="logo" className='img-banner' />
-  </div>
+        <div className="list-planner">
+        <div>{Plannerlist}</div>
+        </div>
+      </div>
 
-    <section className="container-listplanner">
-      <div className="listplanner-grid">
-      <h2 className="title-planner">Wewe, Lorem ipsum</h2>
-      </div>
-      <div className="planner-travel-grid">
-          <div className="planner-travel">
-            {Plannerlist}
-          </div>
-          <div className="planner-travel">
-            
-          </div>
-      </div>
-    </section>
+
       
       <div className="plannerlistelement" style={{ display: "flex" }}>
         <img
@@ -79,32 +68,21 @@ export default function ListPlanner() {
           <p>Click here to start organizing your next big adventure</p>
         </div>
       </div>
-
-      
     </section>
     <Footer/>
     </div>
-    
-
-
   );
 }
 
 
-{/* <section key={element.name} className="previewrequest-grid">
-        <div  className='previewrequest' style={{display:'flex'}} 
-          onClick={()=>GoTo(props.path+'/'+element.id+'/'+element.name+'/'+element.where)}>
-        
-          
-          <div style={style}  className='imgrequestpreview'/>
-            <div className="sectionelementtitlerequest-grid">
-              <h3 className="sectionelementtitlerequest">
-                • {element.name} is asking help for { element.where}.
-              </h3>
-              <p className="info-request">
-                {element.text}
-              </p>
-            </div>
+{/* <section className="containerPreview-friends">
+      <div className="sectiontitle">
+        <Link to="/ ">
+          <h2 className="title">Help your friends</h2>
+        </Link>
+      </div>
 
-        </div>
-</section> */}
+      <div className="contaniterfriends">
+        <IconPreviewRequest array={pendingQuestion} path={'/giveSuggestion'} />
+      </div>
+    </section> */}

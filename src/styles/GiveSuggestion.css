@@ -1,7 +1,28 @@
+.banner-home{
+  width: 100%;
+  display: grid;
+  margin-top:50px;
+  }
+
+  .body{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .img-banner{
+  display: grid;
+  position: relative;
+  border-radius: 12px;
+  }
+
+
+
+
+
 .suggestioncontainer {
   background-color: #f0f0f0;
-  border-radius: 20px;
-  margin: 10px;
+  border-radius: 12px;
+  margin-top:50px;
   padding: 20px;
   display:block;
 }
@@ -15,8 +36,17 @@
 /* Section Select from your archive  */
 .sectionSelectBox {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
+}
+
+.col1{
+  display: grid;
+  margin: 10px;
+}
+
+.col2{
+  display: grid;
+  margin: 10px;
 }
 
 .submitButton1{
@@ -31,7 +61,7 @@
   font-size: 16px;
   cursor: pointer;
   display: grid;
-  margin: 10px;
+  margin: 10px auto;
  
 }
 
@@ -40,45 +70,135 @@
   transition: 0,3s;
 }
 
+.formDiv{
+  display: grid;
+  grid-gap: 15px;
+}
+
 .formsuggestion {
   font-family: "Comfortaa", cursive;
   color: #222222;
-  display: inline-block;
+  display: grid;
+  
 }
 
 .formelement{
+  border-radius: 10px;
+  margin: 8px;
+  font-family: "Comfortaa", cursive;
+  padding: 5px;
+  border:none;
+  display: grid;
+  margin-left: 20%;
+  margin-right: 20%;
+  
+}
+
+
+.formelement1{
     border-radius: 10px;
     margin: 8px;
     font-family: "Comfortaa", cursive;
     padding: 5px;
     border:none;
-    display: inline-block;
+    display: grid;
+    
 }
 
-.addAPhoto{
-  margin:10px !important;
-}
-
-.labelAddPhoto{
-  margin:10px;
-  padding: 15px 32px;
-  color: white;
-  font-family: 'Comfortaa', cursive;
-  background-color:#75D8A2 ;
-  padding: 4px;
-}
-
-.labelAddPhoto:hover{
-  transition: 0,3s;
-  background-color:#2F7055 ;
+.formelement2{
+  border-radius: 10px;
+  margin: 8px;
+  font-family: "Comfortaa", cursive;
+  padding: 5px;
+  border:none;
+  display: grid;
   
 }
+
+.formelement3{
+  border-radius: 10px;
+  margin: 8px;
+  font-family: "Comfortaa", cursive;
+  padding: 5px;
+  border:none;
+  display: grid;
+  
+}
+
+.formelement4{
+  border-radius: 10px;
+  margin: 8px;
+  font-family: "Comfortaa", cursive;
+  padding: 5px;
+  border:none;
+  display: grid;
+  
+}
+
+.formelement5{
+  border-radius: 10px;
+  margin: 8px;
+  font-family: "Comfortaa", cursive;
+  padding: 5px;
+  border:none;
+  width: 100%;
+  
+}
+
+
+
 
 .descriptionsuggestion{
     text-align: left;
     height: 15em;
     width: 25em;
     margin-bottom: 30px;
+    display: grid;
+    
+}
+
+
+
+
+
+.labelBrowseFile{
+  background-color: #75D8A2;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.labelBrowseFile:hover{
+  background-color:#2F7055;
+  transition: 0,3s;
+}
+
+
+
+.upbutton{
+  background-color: #75D8A2;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.upbutton:hover{
+  background-color:#2F7055;
+  transition: 0,3s;
 }
 
 .submitButton{
@@ -100,6 +220,3 @@
   background-color:#2F7055;
   transition: 0,3s;
 }
-
-
-

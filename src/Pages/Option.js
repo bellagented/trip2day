@@ -29,13 +29,18 @@ export default function UploadImage(props) {
   return (
     <div>
       <div className="file-upload">
-
-        <input type="file" ref={el} onChange={handleChange} name='file' />
-        {/* <button onClick={uploadFile} className="upbutton">
-
+ LauraCss
+        <label className='labelBrowseFile'>
+          Browse
+        <input style={{display:'none'}} className='inputFile' type="file" ref={el} onChange={handleChange} />
+        </label>
+        <button  onClick={uploadFile} className="upbutton">
           Upload
-        </button> */}
-            <hr />
+        </button>
+            
+
+       
+
         {/* displaying received image*/}
         {/* <div><textarea value={data.path} onChange={uploadFile} /></div> */}
         {data.path && <img src={data.path} alt={data.name} style={{width: 300}}/>}

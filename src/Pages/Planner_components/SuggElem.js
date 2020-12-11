@@ -5,6 +5,7 @@ export default function SuggElem(props) {
 const [show, setShow] = useState(false);
 
   return (
+
     <div className='suggestions-list-element-box' onClick={()=>{setShow(!show)}}>
         <h3 className="suggestions-list-element" key={props.id}> {props.suggestion.fromWho} suggested {props.suggestion.name}</h3>
           {show? 
@@ -14,9 +15,11 @@ const [show, setShow] = useState(false);
         <p>{props.suggestion.description}</p>
         <p>cost: {props.suggestion.cost}</p>
         <p>time needed: {props.suggestion.timeNeeded}</p>
+ {props.suggestion.photo? <img src={props.suggestion.photo} alt='photosugg'></img>:<div> </div>}
         <button  className='suggestions-button' onClick={()=>{props.saveSugg(props.id)}} >add to plan</button>
         </div>:<div> 
       </div>}
+
         
 
       </div>

@@ -80,6 +80,15 @@ export default function Planner() {
     let copySugg = suggestions.slice();
     let savedElement = copySugg[position];
     let copyarray = plannedAppointments.slice();
+    savedElement={
+      category: "",
+    cost: "",
+    description: "",
+    fromWho: name,
+    id: Math.random().toString(16).substr(8, 10),
+    name: savedElement.name,
+    photo: "",
+    timeNeeded: "",};
     copyarray.push(savedElement);
     setIsSaved(false);
     setPlannedAppointments(copyarray);
@@ -150,6 +159,7 @@ const saveAll=()=>{
 
       ) : (
 
+
         <div className="planner-travel-grid">
           <div className="travel-img">
             <img src={selectedPlan.img} alt="cityimg" />
@@ -157,12 +167,14 @@ const saveAll=()=>{
           <div className="travel-info">
             <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
           </div>
+
         </div>
       )}
 
       {/* TYPE HERE YOUR REQUEST */}
 
       <BannerAskSuggestion sendrequest={sendrequest} />
+
       {/* blocco bottone salvataggio */}
       {/* suggestions saved */}
 

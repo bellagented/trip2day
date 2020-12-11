@@ -10,9 +10,12 @@ export default function SuggElemSaved(props) {
         {show?   <div className='grid-button'>
           <button  className='suggestions-button' onClick={()=>{setEdit(!edit); setShow(!show)}} >Add description and photo'</button>
           <button  className='suggestions-button' onClick={()=>{props.refuseSugg(props.id)}} >Remove from plan</button>
-{console.log(props.event)}
-          <p>{props.event.description}</p>
-          <img src={props.event.photo} alt='myphoto'></img>
+
+{props.event.category? <p>category: {props.event.category}</p>:<div> </div>}
+{props.event.description? <p>{props.event.description}</p>:<div> </div>}
+{props.event.cost? <p>cost: {props.event.cost}</p>:<div> </div>}
+{props.event.timeNeeded? <p>time needed: {props.event.timeNeeded}</p>:<div> </div>}
+{props.event.photo? <img src={props.event.photo} alt='photosugg'></img>:<div> </div>}
           
         </div>: <></>}
         {edit? <div>

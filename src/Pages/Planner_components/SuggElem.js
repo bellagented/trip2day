@@ -12,7 +12,7 @@ const [show, setShow] = useState(false);
 <p>{props.suggestion.description}</p>
 <p>cost: {props.suggestion.cost}</p>
 <p>time needed: {props.suggestion.timeNeeded}</p>
-<img src={props.suggestion.photo} alt='photosugg'></img>
+{props.suggestion.photo? <img src={props.suggestion.photo} alt='photosugg'></img>:<div> </div>}
           <button  className='suggestions-button' onClick={()=>{props.saveSugg(props.id)}} >add to plan</button>
         </div>:<div> </div>}
         

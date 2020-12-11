@@ -81,7 +81,7 @@ return(
                 Beach/Mountain/Nature
               </option>
               <option value="Activity/Tour">Activity/Tour</option>
-              <option value="Instagram Spot">Activity/Tour</option>
+              <option value="Instagram Spot">Instagram Spot</option>
             </select>
 
             

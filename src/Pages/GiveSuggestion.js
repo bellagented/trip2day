@@ -8,6 +8,7 @@ import LoadPlace from "./GiveSuggestion Components/LoadPlace";
 import { useAuth0 } from "@auth0/auth0-react";
 import UploadImage from "./Option";
 import Banner from '../styles/banner-home-2.jpg'
+import Footer from './Footer'
 
 
 
@@ -83,6 +84,7 @@ export default function GiveSuggestion(props) {
   };
 
   return (
+    <>
     <div className='body'>
     <div className="banner-home">
     <img src={Banner} alt="logo" className='img-banner' />
@@ -180,7 +182,9 @@ export default function GiveSuggestion(props) {
           </form>
           </section>
       </div>
+      
       </div>
-    
+      <Footer/>
+    </>
   );
 }

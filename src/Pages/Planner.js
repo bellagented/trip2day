@@ -9,6 +9,7 @@ import SuggElemSaved from "./Planner_components/SuggElemSaved";
 import Demo from "./Components/Schedule";
 import { useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import Banner from '../styles/banner-planner-2.jpg'
 
 const selectedplan = {
   city: "",
@@ -119,10 +120,17 @@ export default function Planner() {
   };
 
   return (
-    <div className="Planner">
+    // SECTION CON IMMAGINE CITTA' + INFO VIAGGI
+    <div className="planner">
+      <div className="banner-home">
+        <img src={Banner} alt="logo" className='img-banner' />
+        </div>
+
      {isLoaded ? ( <section>
       {creationMode ? (
-        <div>
+
+        
+        <div >
           <Header defaultimg={selectedPlan.img}/>
           <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={() => {
             setIsSaved(true);
@@ -130,63 +138,68 @@ export default function Planner() {
             plan: plannedAppointments, suggestion:suggestions});
           }} />
         </div>
+
       ) : (
-        <div>
-          <img src={selectedPlan.img} alt="cityimg" />
-          <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
+        <div className="planner-travel-grid">
+          <div className="travel-img">
+            <img src={selectedPlan.img} alt="cityimg" />
+          </div>
+          <div className="travel-info">
+            <InfoBar info={selectedPlan} switch={setCreationMode} isSaved={setIsSaved}/>
+          </div>
         </div>
       )}
+
+      {/* TYPE HERE YOUR REQUEST */}
+
       <BannerAskSuggestion sendrequest={sendrequest} />
-     {/* blocco bottone salvataggio */}
-      {isSaved ? (
-        "All changes are saved"
-      ) : (
+      {isSaved ? ("") : (
         <button
-          onClick={() => {
-            setIsSaved(true);
+          onClick={() => { setIsSaved(true);
             patchPlan(url, {selectedPlan:selectedPlan,
             plan: plannedAppointments, suggestion:suggestions});
-          }}
-        >
-          Save plan!
+          }}>Save plan!
         </button>
       )}
-      {/* blocco bottone salvataggio */}
-      <div className="container">
-        <h2 className="text-important-data">Suggestions saved</h2>
-        <div className="list">
-          {plannedAppointments.map((e) => {
-           
-           return (
-              <SuggElemSaved
-                key={e.id}
-                id={e.id}
-                event={e}
-                refuseSugg={refusesuggestion}
-              />
-            );
-          })}
-        </div>
-      </div>
 
+      {/* blocco bottone salvataggio */}
+      {/* suggestions saved */}
+
+      <section className="suggestions-grid">
+        
+        <div className="container">
+          <h2 className="suggestions-title">Suggestions saved</h2>
+            <div className="suggestions-list"> {plannedAppointments.map((e) => {
+              return (
+                <SuggElemSaved
+                  key={e.id}
+                  id={e.id}
+                  event={e}
+                  refuseSugg={refusesuggestion}
+                />
+                );
+              })}
+            </div>
+        </div>
      
-       
-          <div className="container">
-            <h2 className="text-important-data">Suggestions from friends</h2>
-            <div className="list">
-              {suggestions.map((e) => {
+        {/* suggestions from friends */}
+
+        <div className="container">
+            <h2 className="suggestions-title">Suggestions from friends</h2>
+              <div className="suggestions-list">{suggestions.map((e) => {
                 return (
                   <SuggElem
-                    key={e.id}
-                    id={e.id}
-                    suggestion={e}
-                    saveSugg={savesuggestion}
-
+                  key={e.id}
+                  id={e.id}
+                  suggestion={e}
+                  saveSugg={savesuggestion}
                   />
                 );
               })}
             </div>
           </div>
+
+        </section>
 
           <Demo date={startingDate} appointments={plannedAppointments} />
         </section>

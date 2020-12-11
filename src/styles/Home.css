@@ -4,7 +4,6 @@
 margin-left: 5%;
 margin-right: 5%;
 margin-top: 50px;
-
 }
 
 .banner-home{
@@ -29,10 +28,10 @@ grid-gap: 15px;
 
 .homecontent-container {
 display: grid;
-height: 120px;
+height: 100px;
 font-family: "Comfortaa", cursive;
 text-decoration: none;
-color:#9bf2cf;
+color: #e4e4e4;
 background-color: #222222;
 border-radius: 12px;
 margin-top: -2px;
@@ -43,14 +42,13 @@ font-size: 1.1em;
 
 h2.homecontent-container-account{
 display: grid;
-height: 120px;
+height: 100px;
 border-radius: 12px;
 margin-top: -2px;
 padding: 15px;
 background-color: #9bf2cf;
 text-align: end;
 font-size: 1em;
-text-decoration: underline;
 font-weight: 500;
 }
 
@@ -88,7 +86,7 @@ font-size: 1em;
 }
 
 .title:hover{
-color:#9bf2cf;
+  color: #e4e4e4;
 background-color: #222222;
 }
 
@@ -132,7 +130,7 @@ background-color: #9bf2cf
 
 .sectionelementcity:hover{
 cursor: pointer;
-color:#9bf2cf;
+color: #e4e4e4;
 background-color: #222222;
 }
 
@@ -167,7 +165,7 @@ background-color: #9bf2cf ;
 
 .sectionelementadd:hover{
 cursor: pointer;
-color:#9bf2cf;
+color: #e4e4e4;
 background-color: #222222;
 }
 
@@ -175,7 +173,6 @@ background-color: #222222;
 
 .containerPreview-friends{
 margin-top: 60px;
-display: grid;
 background-color: #f0f0f0;
 padding: 15px;
 border-radius: 12px;
@@ -191,15 +188,14 @@ overflow: scroll;
 }
 
 .previewrequest {
-  margin-top: 60px;
-  border-radius: 5px;
-  margin: 5px;
-  /* background-color: #9bf2cf; */
-  font-family: "Comfortaa", cursive;
-  /* align-items: center;  */
-  background-color: #222222;  
-  font-weight: 300;
-  height: 200px;
+margin-top: 60px;
+border-radius: 5px;
+margin: 5px;
+font-family: "Comfortaa", cursive;
+background-color: white;  
+font-weight: 300;
+height: 200px;
+padding: 10px;
 }
 
 .previewrequest:hover {
@@ -208,20 +204,40 @@ cursor: pointer;
 }
 
 .imgrequestpreview {
-  width: 30%;
-  height: 100%;
-  border-radius: 5px;
-  background-size: cover;
-  background-position: center;
+width: 30%;
+height: 100%;
+border-radius: 5px;
+background-size: cover;
+background-position: center;
 }
 
+.sectionelementtitlerequest-grid{
+width: 100%;
+}
+
+
 .sectionelementtitlerequest {
-  font-family: "Comfortaa", cursive;
-  color:#9bf2cf;
-  padding-left: 10px;
-  font-size: 1em;
+font-family: "Comfortaa", cursive;
+font-weight: 600;
+color:#222222;
+background-color: #9bf2cf;
+margin-left: 10px;
+margin-top:0px;
+padding: 5px;
+font-size: 1.1em;
+width: 96%;
+height: 25%;
+border-radius: 6px;
 }
 
 .sectionelementtitlerequest:hover{
-  text-decoration: underline;
+text-decoration: underline;
+}
+
+.info-request{
+color:#222222;
+font-weight: 300;
+font-size: 1em;
+padding-left: 12px;
+margin-top: 40px;
 }

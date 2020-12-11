@@ -6,11 +6,17 @@ margin-top: 50px;
 
 .container-listplanner{
 margin-top: 60px;
+margin-bottom: 60px;
 display: grid;
 background-color: #f0f0f0;
-padding: 15px;
 border-radius: 12px;
 height: 400px;
+
+}
+
+.listplanner-grid{
+border:2px solid red;
+padding: 15px;
 }
 
 .title-planner{
@@ -23,7 +29,6 @@ padding: 5px;
 background-color:#9bf2cf;
 font-size: 1em;
 width: 25%;
-
 }
 
 .title-planner:hover{
@@ -31,17 +36,24 @@ color:#9bf2cf;
 background-color: #222222;
 }
 
-.list-planner{
-  border: 2px solid red;
-  height: 200px;
+.planner-travel-grid{
+border: 2px solid green;
+display:grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 10px;
+}
+
+.planner-travel{
+display: grid;
+background-color: green;
+padding: 10px;
 }
 
 .plannerlistelement {
-  font-family: "Comfortaa", cursive;
-  background-color: #9bf2cf;
-  color: #222222;
-  border-radius: 5px;
-  margin: 10px;
+font-family: "Comfortaa", cursive;
+background-color: white;
+color: #222222;
+border-radius: 5px;
 }
 
 .plannerlistelement:hover {

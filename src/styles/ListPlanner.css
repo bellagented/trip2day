@@ -1,69 +1,101 @@
-.Listplanner-header-grid{
-margin-left: 5%;
-margin-right: 5%;
-margin-top: 50px;
+.Listplanner-header-grid {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 50px;
 }
 
-.container-listplanner{
-margin-top: 60px;
-margin-bottom: 60px;
-display: grid;
-background-color: #f0f0f0;
-border-radius: 12px;
-height: 400px;
-
+.container-listplanner {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: grid;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  height: 400px;
 }
 
-.listplanner-grid{
-border:2px solid red;
-padding: 15px;
+.listplanner-grid {
+  padding: 15px;
 }
 
-.title-planner{
-display: grid;
-font-weight: 600;
-color:#222222;
-height: 50px;
-border-radius: 6px;
-padding: 5px;
-background-color:#9bf2cf;
-font-size: 1em;
-width: 25%;
+.title-planner {
+  display: grid;
+  font-weight: 600;
+  color: #222222;
+  height: 50px;
+  border-radius: 6px;
+  padding: 5px;
+  background-color: #9bf2cf;
+  font-size: 1em;
+  width: 25%;
 }
 
-.title-planner:hover{
-color:#9bf2cf;
-background-color: #222222;
+.title-planner:hover {
+  color: #9bf2cf;
+  background-color: #222222;
 }
 
-.planner-travel-grid{
-border: 2px solid green;
-display:grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 10px;
+.container-listplanner {
+  margin-top: 60px;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 12px;
+  height: 400px;
+  margin-bottom: 60px;
 }
 
-.planner-travel{
-display: grid;
-background-color: green;
-padding: 10px;
+.planner-travel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  overflow: scroll;
+}
+.planner-travel {
+  margin-top: 60px;
+  border-radius: 5px;
+  margin: 5px;
+  font-family: "Comfortaa", cursive;
+  background-color: white;
+  font-weight: 300;
+  height: 200px;
+  padding: 10px;
 }
 
 .plannerlistelement {
-font-family: "Comfortaa", cursive;
-background-color: white;
-color: #222222;
-border-radius: 5px;
+  width: 100%;
 }
 
 .plannerlistelement:hover {
-cursor: pointer;
-  }
-.plannerlistelement img {
-  height: 10em;
-  width: 10em;
-  border-radius: 5px;
+  cursor: pointer;
 }
-.plannerlistelement div{
-    padding-left: 10px;
+.lethPhoto {
+  width: 30%;
+  height: 100%;
+  border-radius: 5px;
+  size: cover;
+  position: center;
+}
+
+.plannerlistelement div {
+  padding-left: 10px;
+}
+
+.leth3 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 600;
+  color: #222222;
+  background-color: #9bf2cf;
+  margin-left: 10px;
+  margin-top: 0px;
+  padding: 5px;
+  font-size: 1.1em;
+  width: 180px;
+  height: 25%;
+  border-radius: 6px;
+}
+.lethp {
+  color: #222222;
+  font-weight: 300;
+  font-size: 1em;
+  padding-left: 12px;
+  margin-top: 40px;
 }

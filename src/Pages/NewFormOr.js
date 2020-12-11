@@ -40,7 +40,6 @@ export default function ContactForm(props) {
       axios
         .post("http://localhost:3001/upload", formData)
         .then((res) => {
-          console.log(res);
           setImg("http://localhost:3001" + res.data.path);
           getFile({
             name: res.data.name,
@@ -114,7 +113,6 @@ export default function ContactForm(props) {
           {data.path && (
             <img src={data.path} alt={data.name} style={{ width: 700 }} />
           )}
-          {console.log(data)}
         </div>
         <input
           className="form-input-box"

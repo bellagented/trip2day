@@ -34,7 +34,7 @@ function App() {
         <PrivateRoute path="/option" component={Option} />
         <PrivateRoute path="/newPlanner" component={NewPlanner} />
         <PrivateRoute path="/planner/:idplanner" component={Planner} />
-        <PrivateRoute path="/planner" component={ListPlanner} />
+        <PrivateRoute path="/listPlanner" component={ListPlanner} />
         <PrivateRoute path="/archive/:idarchive" component={Archive} />
         <PrivateRoute path="/archive" component={ListArchive} />
         <PrivateRoute path="/friendlist" component={FriendList} />

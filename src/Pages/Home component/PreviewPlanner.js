@@ -17,7 +17,7 @@ export default function PreviewPlanner(props) {
   return (
     <section className="containerPreview-grid">
       <div className="sectiontitle">
-        <Link to="/planner ">
+        <Link to="/listPlanner/">
           <h2 className="title">Your plans</h2>
         </Link>
         {/* <div className="sectionsubtitle">

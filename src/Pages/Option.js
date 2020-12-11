@@ -24,11 +24,12 @@ export default function UploadImage(props) {
       .catch(err => console.log(err));}
   }
 
-  
+
 
   return (
     <div>
       <div className="file-upload">
+      {data.path && <img src={data.path} alt={data.name} style={{width: 200,margin:10,borderRadius:'6px'}}/>} <br/>
         <label className='labelBrowseFile'>
           Browse
         <input style={{display:'none'}} className='inputFile' type="file" ref={el} name='file' onChange={handleChange} />
@@ -42,7 +43,7 @@ export default function UploadImage(props) {
 
         {/* displaying received image*/}
         {/* <div><textarea value={data.path} onChange={uploadFile} /></div> */}
-        {data.path && <img src={data.path} alt={data.name} style={{width: 300}}/>}
+        
       </div>
   </div>
   );

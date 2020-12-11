@@ -184,6 +184,8 @@ margin-top: 60px;
 margin-bottom: 60px;
 padding: 15px;
 border-radius:12px;
+height: 700px;
+overflow: scroll;
 }
 
 .container{
@@ -226,11 +228,13 @@ transition: 0.3s;
 padding: 5px;
 border-radius: 6px;
 font-family: "Comfortaa", cursive;
+margin-top:-5px;
+border:1px solid #222222 
 }
 
 .suggestions-button{
 height: 25px;
-width: 30%;
+width: 100%;
 border: none;
 border-radius: 6px;
 background-color: #9bf2cf;
@@ -257,6 +261,7 @@ padding: 10px;
 border-radius:6px;
 font-family: "Comfortaa", cursive;
 margin:0px;
+margin-top: 17px;
 }
 
 .suggestions-list-element-box-saved:hover{
@@ -268,31 +273,68 @@ transition: 0.3s;
 font-size: 1em;
 font-weight: 600;
 margin-top: 0px;
+
 }
 
 .suggestions-list-element-saved:hover{
 cursor: pointer;
 }
 
-.grid-button{
+.grid-button-saved{
 margin-top:60px;
 margin-left:-10px;
 margin-right:-10px;
 padding: 0px;
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr;
 grid-column-gap: 10px;
+padding: 10px;
+border:1px solid #222222;
+border-radius: 6px;
+overflow: scroll;
 }
 
-.suggestions-button{
-display: grid;
+.suggestions-button-saved{
+height: 25px;
 width: 100%;
-justify-items: center;
-padding: 5px;
+margin-top:12px;
+border: none;
+border-radius: 6px;
+background-color: #9bf2cf;
+font-size: 0.9em;
+font-weight: 600;
+font-family: "Comfortaa", cursive;
+
+}
+
+.suggestions-button-saved:hover{
+background-color: #222222;
+color: #e4e4e4;
+transition: 0.3s;
+cursor: pointer;
 }
 
 .form-suggestions-saved{
-  border: 1px solid red;
-  height: 120px;
-  overflow: scroll;
+border-radius: 6px;
+margin-top:20px;
+background-color:#f0f0f0;
+height: 470px;
+
+}
+
+.img-suggestions-saved{
+  height: auto;
+  width: 100%;
+  border-radius:6px;
+}
+
+.button-close-suggestions{
+  border: none;
+  margin-top: 40px;
+  margin-left:-10px;
+  background-color: #222222;
+  color: #e4e4e4;
+  font-family: "Comfortaa", cursive;
+  font-size: 0.7em;
+  border-radius: 6px;
 }

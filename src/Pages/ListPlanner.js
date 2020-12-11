@@ -54,7 +54,18 @@ export default function ListPlanner() {
             {Plannerlist}
           </div>
           <div className="planner-travel">
-            
+          <div className="plannerlistelement" style={{ display: "flex" }}>
+        <img
+          src="https://images.unsplash.com/photo-1468530986413-2c93495ed020?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80"
+          alt="travel"
+        ></img>
+        <div onClick={() => {
+    history.push('newPlanner');
+  }}>
+          <h3>Let's go to a new adventure!!</h3>
+          <p>Click here to start organizing your next big adventure</p>
+        </div>
+      </div>
           </div>
       </div>
     </section>

@@ -29,14 +29,13 @@ export default function UploadImage(props) {
   return (
     <div>
       <div className="file-upload">
- LauraCss
         <label className='labelBrowseFile'>
           Browse
-        <input style={{display:'none'}} className='inputFile' type="file" ref={el} onChange={handleChange} />
+        <input style={{display:'none'}} className='inputFile' type="file" ref={el} name='file' onChange={handleChange} />
         </label>
-        <button  onClick={uploadFile} className="upbutton">
+        {/* <button  onClick={uploadFile} className="upbutton">
           Upload
-        </button>
+        </button> */}
             
 
        

@@ -30,7 +30,7 @@ export default function Header() {
           height: 320,
           margin: "0 auto",
           border: "1px dashed #a2a2a2",
-          border: solidblue,
+          border: "solid blue",
         }}
         onClick={() => imageUploader.current.click()}
       >

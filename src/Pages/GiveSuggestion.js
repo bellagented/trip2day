@@ -7,6 +7,8 @@ import LoadSuggestion from "./GiveSuggestion Components/LoadSuggestion";
 import LoadPlace from "./GiveSuggestion Components/LoadPlace";
 import { useAuth0 } from "@auth0/auth0-react";
 import UploadImage from "./Option";
+import Banner from '../styles/banner-home-2.jpg'
+
 
 
 export default function GiveSuggestion(props) {
@@ -81,20 +83,31 @@ export default function GiveSuggestion(props) {
   };
 
   return (
-    <>
- 
+    <div className='body'>
+    <div className="banner-home">
+    <img src={Banner} alt="logo" className='img-banner' />
+  </div> 
+      
       <div className="suggestioncontainer">
-        <h2 className="suggestionHeader">
-          Give a suggestion to <span style={{ color: "#2F7055" }}>{towho}</span>{" "}
-          for <span style={{ color: "#2F7055" }}>{forwhere}</span>
+        <h2 className="suggestionHeader" >
+          Give a suggestion to <span style={{ color: "#22222 " , fontWeight:'600'}}>{towho}</span>{" "}
+          for <span style={{ color: "#22222 " , fontWeight:'600'}}>{forwhere}</span>
         </h2>
+        <div className='sectionSelectBox'>
+          <div className='col1'>
         <LoadPlace setEvent={setSuggestion} suggestion={myActivity}/>
+        </div>
+        <div className='col2'>
         <LoadSuggestion suggestion ={suggestion} id={id}/>
+        </div>
+        </div>
         <p>or</p>
-        <section>
+        <section className='formDiv'>
+          
           <form onSubmit={handleSubmit} className="formsuggestion">
+            
             <select
-              className="formelement"
+              className="formelement1"
               value={category}
               onChange={handleChange}
               name="category"
@@ -109,11 +122,11 @@ export default function GiveSuggestion(props) {
               <option value="Activity/Tour">Activity/Tour</option>
               <option value="Instagram Spot">Activity/Tour</option>
             </select>
-
-            <br />
-
+            
+            
+              
             <input
-              className="formelement"
+              className="formelement2"
               name="nameActivity"
               type="text"
               value={activity}
@@ -122,10 +135,10 @@ export default function GiveSuggestion(props) {
               required
             />
 
-            <br />
+           
 
             <input
-              className="formelement"
+              className="formelement3"
               name="cost"
               type="text"
               value={cost}
@@ -134,10 +147,10 @@ export default function GiveSuggestion(props) {
               required
             />
 
-            <br />
+          
 
             <input
-              className="formelement"
+              className="formelement4"
               name="time-needed"
               type="text"
               value={timeNeeded}
@@ -146,10 +159,10 @@ export default function GiveSuggestion(props) {
               required
             />
 
-            <br />
+            
 
             <textarea
-              className="formelement descriptionsuggestion"
+              className="formelement5 descriptionsuggestion"
               name="description"
               type="text"
               value={description}
@@ -157,24 +170,17 @@ export default function GiveSuggestion(props) {
               placeholder="Description"
               required
             />
-            <br />
-            <label>
-              Add a photo:
-              {/* <input
-                className="formelement"
-                type="file"
-                name="photo"
-                onChange={handleChange}
-              /> */}
-
-            </label>
+            
+            
             <UploadImage setPhoto={setPhoto}/>
-            <br />
-
-            <input className="formelement" type="submit" value="Submit" />
+            
+            
+            <input className="submitButton" type="submit" value="Submit" />
+            
           </form>
-        </section>
+          </section>
       </div>
-    </>
+      </div>
+    
   );
 }

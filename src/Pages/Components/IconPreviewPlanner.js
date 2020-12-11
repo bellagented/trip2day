@@ -13,12 +13,12 @@ export default function IconPreview(props) {
     history.push(path);
   };
 
-  return props.array.map((element) => {
+  return props.array.slice(-3).reverse().map((element) => {
     const style={backgroundImage: "url(" + element.img  + ")"}
     return (
-      <div>
+      <div onClick={()=>GoTo(props.path+element.id)}>
         <div key={element.id} className='preview-city' style={style} 
-          onClick={()=>GoTo(props.path+element.id)}>
+          >
         </div>
         <div> 
            <h3 className="sectionelementcity">{element.name}</h3>

@@ -29,6 +29,7 @@ export default function Planner() {
   const [suggestions, setSugg] = useState([]);
   const [isSaved, setIsSaved] = useState(true);
   const [creationMode, setCreationMode] = useState(false);
+  const [obj,setObj]=useState({});
 
   const url = "http://localhost:3001/" + name + "/planner/" + idplanner;
 
@@ -108,6 +109,11 @@ export default function Planner() {
     return a;
   }
 
+useEffect(() => {
+  saveAll();
+  
+}, [selectedPlan,plannedAppointments,suggestions]);
+
   const sendrequest = (text) => {
     const request = {
       img: selectedPlan.img,
@@ -118,8 +124,14 @@ export default function Planner() {
     };
     postReq(" http://localhost:3001/AskSuggestion", request);
   };
+const saveAll=()=>{
+  // setIsSaved(true);
 
+  patchPlan(url,{selectedPlan:selectedPlan,
+    plan: plannedAppointments, suggestion:suggestions});
+};
   return (
+    
     // SECTION CON IMMAGINE CITTA' + INFO VIAGGI
     <div className="planner">
       <div className="banner-home">
@@ -132,14 +144,12 @@ export default function Planner() {
         
         <div >
           <Header defaultimg={selectedPlan.img}/>
-          <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={() => {
-            setIsSaved(true);
-            patchPlan(url, {selectedPlan:selectedPlan,
-            plan: plannedAppointments, suggestion:suggestions});
-          }} />
+          <InfoTrip setData={setSelectedPlan} defaultValue={selectedPlan} setCreationMode={setCreationMode} save={saveAll} />
+
         </div>
 
       ) : (
+
         <div className="planner-travel-grid">
           <div className="travel-img">
             <img src={selectedPlan.img} alt="cityimg" />
@@ -153,15 +163,6 @@ export default function Planner() {
       {/* TYPE HERE YOUR REQUEST */}
 
       <BannerAskSuggestion sendrequest={sendrequest} />
-      {isSaved ? ("") : (
-        <button
-          onClick={() => { setIsSaved(true);
-            patchPlan(url, {selectedPlan:selectedPlan,
-            plan: plannedAppointments, suggestion:suggestions});
-          }}>Save plan!
-        </button>
-      )}
-
       {/* blocco bottone salvataggio */}
       {/* suggestions saved */}
 
@@ -172,10 +173,13 @@ export default function Planner() {
             <div className="suggestions-list"> {plannedAppointments.map((e) => {
               return (
                 <SuggElemSaved
-                  key={e.id}
-                  id={e.id}
-                  event={e}
-                  refuseSugg={refusesuggestion}
+                 key={e.id}
+                id={e.id}
+                event={e}
+                refuseSugg={refusesuggestion}
+                edit={setPlannedAppointments}
+                planned={plannedAppointments}
+                save={saveAll}
                 />
                 );
               })}

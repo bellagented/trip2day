@@ -123,6 +123,7 @@ transition: 0.3s;
 }
 */
 
+
 .bannerSuggestion{
 background-color: #f0f0f0;
 height: 120px;
@@ -131,6 +132,17 @@ margin-top:60px;
 display: grid;
 border-radius: 12px;
 font-family: "Comfortaa", cursive;
+}
+
+.bannerSuggestion-grid-box {
+
+  background-color: #a1dbcd;
+  height: 200px;
+  width: 100%;
+  margin: 40px auto;
+  display: grid;
+  border-radius: 30px;
+  font-family: "Comfortaa", cursive;
 }
 
 .bannerSuggestion-grid-box{

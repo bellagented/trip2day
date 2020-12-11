@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 
+
 export default function LoadSuggestion(props) {
   const [selectedEvent, setSelectedEvent] = useState({});
   const history = useHistory();
@@ -61,7 +62,9 @@ export default function LoadSuggestion(props) {
             );
           })}
         </select>
-        <input className="formelement" type="submit" value="Submit" />
+      
+        <input className="submitButton1" type="submit" value="Submit" />
+        
       </form>
     </>
   );

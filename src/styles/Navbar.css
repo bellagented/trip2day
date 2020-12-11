@@ -12,19 +12,21 @@
   display: grid;
   text-decoration: none;
   color: #222222;
+  width: 150px;
 }
 
-h1.logo-navbar {
-  font-size: 1.5em;
-  align-self: center;
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block
 }
 
 .grid-navlink {
   align-self: center;
   text-align: end;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr  1fr 1fr;
+  grid-gap: 40px;
 }
 
 .navlink {

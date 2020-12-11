@@ -1,11 +1,14 @@
 import React,{useState} from 'react';
 import EditPlannedSugg from './EditPlannedSugg';
+import './planner.css';
+
 export default function SuggElemSaved(props) {
   const [show, setShow] = useState(false);
   const [edit, setEdit] = useState(false);
   return (
-      <div className='suggestions-info' >
-        <p key={props.id} onClick={()=>{setShow(!show)}}>{props.event.name}</p>
+    
+      <div className='suggestions-list-element-box-saved' >
+        <h3 className="suggestions-list-element-saved" key={props.id} onClick={()=>{setShow(!show)}}>{props.event.name}</h3>
 
         {show?   <div className='grid-button'>
           <button  className='suggestions-button' onClick={()=>{setEdit(!edit); setShow(!show)}} >Add description and photo'</button>

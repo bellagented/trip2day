@@ -45,20 +45,19 @@ export default function ListPlanner() {
     <img src={Banner} alt="logo" className='img-banner' />
   </div>
 
-  <section className="container-listplanner">
-    <div className="listplanner-grid">
-    <h2 className="title-planner">Wewe, Lorem ipsum</h2>
-    </div>
-    <div className="planner-travel-grid">
-        <div className="planner-travel">
-          {Plannerlist}
-        </div>
-        <div className="planner-travel">
-         
-        </div>
-    </div>
-  </section>
-
+    <section className="container-listplanner">
+      <div className="listplanner-grid">
+      <h2 className="title-planner">Wewe, Lorem ipsum</h2>
+      </div>
+      <div className="planner-travel-grid">
+          <div className="planner-travel">
+            {Plannerlist}
+          </div>
+          <div className="planner-travel">
+            
+          </div>
+      </div>
+    </section>
       
       <div className="plannerlistelement" style={{ display: "flex" }}>
         <img
@@ -72,7 +71,7 @@ export default function ListPlanner() {
           <p>Click here to start organizing your next big adventure</p>
         </div>
       </div>
-    </section>
+</section>
   );
 }
 

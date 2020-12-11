@@ -134,17 +134,6 @@ border-radius: 12px;
 font-family: "Comfortaa", cursive;
 }
 
-.bannerSuggestion-grid-box {
-
-  background-color: #a1dbcd;
-  height: 200px;
-  width: 100%;
-  margin: 40px auto;
-  display: grid;
-  border-radius: 30px;
-  font-family: "Comfortaa", cursive;
-}
-
 .bannerSuggestion-grid-box{
 display: grid;
 grid-template-columns: 75% 25%;
@@ -184,7 +173,7 @@ color:  #e4e4e4;
 transition: 0.3s;
 }
 
-/* SUGGESTIONS SAVED */
+/* SUGGESTIONS FRIEND */
 
 .suggestions-grid{
 background-color: #f0f0f0;
@@ -201,7 +190,6 @@ border-radius:12px;
 background-color: white;
 border-radius: 6px;
 padding: 10px;
-
 }
 
 .suggestions-title{
@@ -209,29 +197,29 @@ font-family: "Comfortaa", cursive;
 font-size: 1.3em;
 font-weight: 600;
 margin-top: -2px;
-
 }
 
 .suggestions-list{
-  border-radius:6px;
-  margin-top:60px;
+border-radius:6px;
+margin-top:60px;
 }
 
 .suggestions-list-element{
-  font-size: 1em;
-  font-weight: 600;
-  background-color: #9bf2cf;
-  height: 3em;
-  padding: 10px;
-  border-radius:6px;
-  font-family: "Comfortaa", cursive;
+font-size: 1em;
+font-weight: 600;
+background-color: #222222;
+height: 3em;
+padding: 10px;
+border-radius:6px;
+font-family: "Comfortaa", cursive;
+color: #e4e4e4;
 }
 
 .suggestions-list-element:hover{
-  cursor: pointer;
-  color: #e4e4e4;
-  background-color:#222222 ;
-  transition: 0.3s;
+cursor: pointer;
+color: #222222;
+background-color: #9bf2cf ;
+transition: 0.3s;
 }
 
 .grid-button{
@@ -256,4 +244,55 @@ cursor: pointer;
 background-color: #222222;
 color: #e4e4e4;
 
+}
+
+/* SUGGESTIONS SAVED */
+
+.suggestions-list-element-box-saved{
+font-size: 1em;
+font-weight: 600;
+background-color: #9bf2cf;
+height: 3em;
+padding: 10px;
+border-radius:6px;
+font-family: "Comfortaa", cursive;
+margin:0px;
+}
+
+.suggestions-list-element-box-saved:hover{
+cursor: pointer;
+transition: 0.3s;
+}
+
+.suggestions-list-element-saved{
+font-size: 1em;
+font-weight: 600;
+margin-top: 0px;
+}
+
+.suggestions-list-element-saved:hover{
+cursor: pointer;
+}
+
+.grid-button{
+margin-top:60px;
+margin-left:-10px;
+margin-right:-10px;
+padding: 0px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-column-gap: 10px;
+}
+
+.suggestions-button{
+display: grid;
+width: 100%;
+justify-items: center;
+padding: 5px;
+}
+
+.form-suggestions-saved{
+  border: 1px solid red;
+  height: 120px;
+  overflow: scroll;
 }

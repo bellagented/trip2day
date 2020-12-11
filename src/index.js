@@ -1,20 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Home from './Pages/home';
-import LoginPage from './Pages/LoginPage';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
+import Auth0ProviderWithHistory from "./Pages/Components/auth/auth0-provider-with-history";
 
-import {
-  BrowserRouter as Router,
-
-} from "react-router-dom";
 ReactDOM.render(
   <Router>
-    <LoginPage />
+    <Auth0ProviderWithHistory>
+      <App />
+    </Auth0ProviderWithHistory>
   </Router>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,26 +1,37 @@
 import React from "react";
-import IconPreview from "../Components/IconPreview";
+import {useEffect,useState} from "react";
+import IconPreviewRequest from "../Components/IconPreviewRequest";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 //banner con preview delle richieste degli amici per la sezione home
 
-let plannerarray = [
-    {
-      img:
-        "https://images.unsplash.com/photo-1565698764182-4d51cd861d1e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "postobellissimo",
-    },
-    {
-      img:
-        "https://images.unsplash.com/photo-1565698764182-4d51cd861d1e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "lostessoposto",
-    },
-  ];
 export default function PreviewFriendRequest(props) {
+const [pendingQuestion, setPendingQuestion] = useState([]);
+const { user } = useAuth0();
+  const { name } = user;
+
+async function getData(url, setValue) {
+  let request = await fetch(url);
+  let response = await request.json();
+  setValue(response);
+  return response;
+}
+useEffect(() => {
+  getData("http://localhost:3001/ReqSuggestion/"+name, setPendingQuestion)
+  }
+, []);
   return (
-    <>
-      <Link to="/ ">HELP MEEEEE!</Link>
-      <IconPreview array={plannerarray} />
-     
-    </>
+    <section className="containerPreview-friends">
+      <div className="sectiontitle">
+        <Link to="/ ">
+          <h2 className="title">Help your friends</h2>
+        </Link>
+      </div>
+
+      <div className="contaniterfriends">
+        <IconPreviewRequest array={pendingQuestion} path={'/giveSuggestion'} />
+      </div>
+    </section>
   );
 }
+

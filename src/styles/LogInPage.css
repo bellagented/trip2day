@@ -1,0 +1,84 @@
+.logo {
+  width: 250px;
+  margin: 15px auto;
+  display: grid;
+}
+
+
+
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}
+
+.viewport-header {
+  background:rgba(255, 255, 255, 0.742);
+  position: relative;
+  margin: 200px auto;
+  height: 350px;
+  width: 500px;
+  border-radius: 20px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+
+
+.loginButtonFB {
+  background-color:#3b5998;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  margin:0px auto 0px auto;
+}
+
+.loginButtonFB:hover{
+    background-color: #2f477a;
+    transition: 0.2s;
+}
+
+.loginButton {
+  background-color:#75D8A2;
+  font-family: comfortaa, cursive;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  margin:0px auto 10px  auto;
+}
+
+.loginButton:hover{
+  background-color: #2F7055;
+  transition: 0.3s;
+}
+
+
+.brandQuote {
+  display: grid;
+  text-decoration: none;
+  color: #455753;
+  font-size: 18px;
+  margin: 10px auto; 
+}
+
+

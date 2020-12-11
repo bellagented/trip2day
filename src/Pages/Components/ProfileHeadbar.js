@@ -3,13 +3,14 @@ import React from "react";
 //headbar con immagine e informazioni profilo
 
 export default function ProfileHeader(props) {
-  const { name, img, age, from } = props.profile;
+  const { name, img, text} = props.profile;
   return (
-    <>
-      <img className="profileimg" href={img} alt="profile" />
-      <h1>{name}</h1>
-      <h2>{age}</h2>
-      <h2>{from}</h2>
-    </>
+    <div className='ProfileHeader'>
+      <img className="profileimg" src={img} alt="profile" />
+      <section className="textsection">
+      <h1 className="nameprofile">{name}</h1>
+      <h4 className="subtextprofil">{text}</h4>
+      </section>
+    </div>
   );
 }

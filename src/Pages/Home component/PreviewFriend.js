@@ -1,26 +1,22 @@
 import React from "react";
-import IconPreview from "../Components/IconPreview";
+import IconPreviewFriend from "../Components/IconPreviewFriend";
 import { Link } from "react-router-dom";
+
 //banner con preview  degli amici per la sezione home
 
-let plannerarray = [
-    {
-      img:
-        "https://images.unsplash.com/photo-1565698764182-4d51cd861d1e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Gianni",
-    },
-    {
-      img:
-        "https://images.unsplash.com/photo-1565698764182-4d51cd861d1e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Mary",
-    },
-  ];
-export default function PreviewFriendRequest(props) {
+
+export default function PreviewFriend(props) {
   return (
-    <>
-      <Link to="/ ">your friend</Link>
-      <IconPreview array={plannerarray} />
-     
-    </>
+    <section className="containerPreview-youfriends"  >
+      <div>
+      <Link className='sectiontitle' to="/ ">
+        <h2 className="title">Friends</h2></Link>
+       </div>
+
+      <div className="preview-friend">
+        <IconPreviewFriend array={props.friendList} path={'/profile/'} />
+      </div>
+
+    </section>
   );
 }

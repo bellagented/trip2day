@@ -1,29 +1,47 @@
 import React from "react";
-import IconPreview from "../Components/IconPreview";
-import { Link } from "react-router-dom";
+import IconPreviewPlanner from "../Components/IconPreviewPlanner";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
 //banner con preview del planner per la sezione home
 
-let plannerarray = [
-    {
-      img:
-        "https://images.unsplash.com/photo-1565698764182-4d51cd861d1e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "postobellissimo",
-    },
-    {
-      img:
-        "https://images.unsplash.com/photo-1565698764182-4d51cd861d1e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "lostessoposto",
-    },
-  ];
 export default function PreviewPlanner(props) {
+  const { user } = useAuth0();
+  const { name } = user;
+  const history = useHistory();
+
+ 
+  
+
   return (
-    <>
-      <Link to="/planner ">YOUR PLANNER</Link>
-      <IconPreview array={plannerarray} />
-      <div>
-      <img src='' alt="plus" />
-        <h3>create new</h3>
+    <section className="containerPreview-grid">
+      <div className="sectiontitle">
+        <Link to="/listPlanner/">
+          <h2 className="title">Your plans</h2>
+        </Link>
+        {/* <div className="sectionsubtitle">
+          <h3 className="subtitle" >Select a plan to open</h3>
+        </div> */}
       </div>
-    </>
+
+      <div className="contaniterplans">
+
+        <IconPreviewPlanner array={props.planners} path={"/planner/"} />
+
+        <div
+          className="preview"
+          onClick={() => {
+            history.push("newPlanner/");
+          }}
+        >
+
+          <p className="add">+</p>
+
+          <h3 className="sectionelementadd">Add planner</h3>
+
+        </div>
+      </div>
+    </section>
   );
 }

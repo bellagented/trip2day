@@ -1,0 +1,298 @@
+/* input[type="file"] {
+    display: none;
+} */
+
+/* SECTION CON IMG VIAGGIO + DATI VIAGGIO */
+
+.planner{
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 50px;
+}
+
+.planner-travel-grid{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-column-gap:10px;
+border-radius:12px;
+border:none!important;
+margin-top:60px;
+}
+
+.travel-info{
+background-color: #f0f0f0;
+border-radius: 12px;
+padding:10px;
+}
+
+.submit-input {
+display: none;
+}
+
+.title-travel{
+font-size:1.4em;
+columns: #222222;
+}
+
+.info-travel{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-column-gap:10px;
+margin-top:40px;
+}
+
+.city-travel{
+height: 30px;
+background-color: white;
+border-radius: 6px;
+padding: 5px;
+margin-top:1px;
+font-size: 1em;
+font-weight: 600;
+}
+
+.date-city{
+height: 30px;
+background-color: white;
+border-radius: 6px;
+padding: 5px;
+margin-top:1px;
+font-size: 1em;
+font-weight: 600;
+}
+ 
+
+.button-city {
+width: 49.3%;
+height: 38px;
+border-radius: 12px;
+border: none;
+background-color: #9bf2cf;
+margin-top:30px;
+border-radius: 6px;
+font-size:1em;
+font-weight: 600;
+}
+
+.button-city:hover{
+cursor: pointer;
+background-color: #222222;
+color:  #e4e4e4;
+transition: 0.3s;
+}
+
+/* !! CHIEDERE SE POSSO CANCELLARE
+
+.custom-file-upload {
+  border:3px solid red;
+  background-color: black;
+  display: block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin: auto;
+  width: 20%;
+  text-align: center;
+  border-radius: 40px;
+  font-family: "Comfortaa", cursive;
+}
+
+
+.info-grid-box {
+  border:3px solid red;
+  width: 100%;
+  margin: 40px auto;
+  display: grid;
+  border-radius: 30px;
+  font-family: "Comfortaa", cursive;
+  border-bottom: 30px;
+}
+
+.form-box {
+  border:3px solid red;
+  display: grid;
+  position: relative;
+  background-color: white;
+
+  width: 100px;
+}
+
+.form-input-box {
+  border:3px solid red;
+  border-radius: 20px;
+  margin: 5px auto; 
+}
+*/
+
+
+.bannerSuggestion{
+background-color: #f0f0f0;
+height: 120px;
+width: 100%;
+margin-top:60px;
+display: grid;
+border-radius: 12px;
+font-family: "Comfortaa", cursive;
+}
+
+.bannerSuggestion-grid-box{
+display: grid;
+grid-template-columns: 75% 25%;
+grid-column-gap:10px;
+padding: 10px;
+width: 96.5%;
+}
+
+.input-request-text{
+padding: 10px;
+width: 97.4%;
+font-size: 1em;
+background-color: white;
+border-radius: 6px;
+display: grid;
+border-style: none;
+justify-items: start;
+}
+
+.submit-button-box {
+background-color: #9bf2cf;
+padding: 10px;
+cursor: pointer;
+width: 100%;
+display: grid;
+text-align: center;
+border-radius: 6px;
+font-family: "Comfortaa", cursive;
+font-size: 1em;
+font-weight: 600;
+}
+
+.submit-button-box:hover{
+cursor: pointer;
+background-color: #222222;
+color:  #e4e4e4;
+transition: 0.3s;
+}
+
+/* SUGGESTIONS FRIEND */
+
+.suggestions-grid{
+background-color: #f0f0f0;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-column-gap:10px;
+margin-top: 60px;
+margin-bottom: 60px;
+padding: 15px;
+border-radius:12px;
+}
+
+.container{
+background-color: white;
+border-radius: 6px;
+padding: 10px;
+}
+
+.suggestions-title{
+font-family: "Comfortaa", cursive;
+font-size: 1.3em;
+font-weight: 600;
+margin-top: -2px;
+}
+
+.suggestions-list{
+border-radius:6px;
+margin-top:60px;
+}
+
+.suggestions-list-element{
+font-size: 1em;
+font-weight: 600;
+background-color: #222222;
+height: 3em;
+padding: 10px;
+border-radius:6px;
+font-family: "Comfortaa", cursive;
+color: #e4e4e4;
+}
+
+.suggestions-list-element:hover{
+cursor: pointer;
+color: #222222;
+background-color: #9bf2cf ;
+transition: 0.3s;
+}
+
+.grid-button{
+padding: 5px;
+border-radius: 6px;
+font-family: "Comfortaa", cursive;
+}
+
+.suggestions-button{
+height: 25px;
+width: 30%;
+border: none;
+border-radius: 6px;
+background-color: #9bf2cf;
+font-size: 0.9em;
+font-weight: 600;
+font-family: "Comfortaa", cursive;
+}
+
+.suggestions-button:hover{
+cursor: pointer;
+background-color: #222222;
+color: #e4e4e4;
+
+}
+
+/* SUGGESTIONS SAVED */
+
+.suggestions-list-element-box-saved{
+font-size: 1em;
+font-weight: 600;
+background-color: #9bf2cf;
+height: 3em;
+padding: 10px;
+border-radius:6px;
+font-family: "Comfortaa", cursive;
+margin:0px;
+}
+
+.suggestions-list-element-box-saved:hover{
+cursor: pointer;
+transition: 0.3s;
+}
+
+.suggestions-list-element-saved{
+font-size: 1em;
+font-weight: 600;
+margin-top: 0px;
+}
+
+.suggestions-list-element-saved:hover{
+cursor: pointer;
+}
+
+.grid-button{
+margin-top:60px;
+margin-left:-10px;
+margin-right:-10px;
+padding: 0px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-column-gap: 10px;
+}
+
+.suggestions-button{
+display: grid;
+width: 100%;
+justify-items: center;
+padding: 5px;
+}
+
+.form-suggestions-saved{
+  border: 1px solid red;
+  height: 120px;
+  overflow: scroll;
+}
